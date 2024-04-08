@@ -36,7 +36,7 @@ p, li {
     text-align: left;
 }
 
-#problem_description section, #proposed_application section{
+.problem_description section, .proposed_application section{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
 }
