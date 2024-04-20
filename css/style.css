@@ -149,3 +149,24 @@ section.info > p {
 .profile img {
     max-width: 100%;
 }
+
+/* Create Page Styling */
+ .heading {
+    text-align: center;
+    margin-top: 1rem
+}
+
+.create-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+.selections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
