@@ -145,3 +145,7 @@ section.info {
 section.info > p {
     height: 6px;
 }
+
+.profile img {
+    max-width: 100%;
+}
