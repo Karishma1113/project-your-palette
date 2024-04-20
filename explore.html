@@ -13,20 +13,103 @@
     </head>
     <body>
         <header>
-            <nav>
-                <a href="#"><img src="#" alt="Logo"></a>
-                <ul>
-                    <li><a href="#">Quiz</a></li>
-                    <li><a href="#">Create</a></li>
-                    <li><a href="#">Explore</a></li>
-                    <li><a href="#">Profile</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a clas="navbar-brand" href="index.html"><img src="#" alt="Your Pal-ette Logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav p-2">
+                            <li class="nav-item px-4"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+                            <li class="nav-item px-4"><a class="nav-link active" href="create.html">Create</a></li>
+                            <li class="nav-item px-4"><a class="nav-link active" href="explore.html">Explore</a></li>
+                            <li class="nav-item px-4"><a class="nav-link active" href="#">Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
         <main>
-            <section>
-                
-            </section>
+            <div class="page-title text-center my-3">
+                <h1>Explore Your Friends' Palettes</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <section id="all-palettes">
+                            <!-- Post 1 -->
+                            <div class="palette-card mt-2 border border-dark border-2 text-center">
+                                <div class="friend-info pt-2">
+                                    <img src="INSERT LATER" alt="Friend One">
+                                    <p>Friend 1</p>
+                                </div>
+                                <div class="friends-palette">
+                                    <img src="img/Friend-1.png" alt="Friend's Palette" style="width: 250px; height: auto;">
+                                </div>
+                                <div class="caption pt-2 px-3">
+                                    <p>How can I improve my palette?</p>
+                                </div>
+                                <div class="post-interaction pb-3">
+                                    <button class="like-btn btn btn-secondary">Like</button>
+                                    <button class="comment-btn btn btn-secondary">Comment</button>
+                                </div>
+                            </div>
+                            <!-- Post 2 -->
+                            <div class="palette-card mt-5 border border-dark border-2 text-center">
+                                <div class="friend-info pt-2">
+                                    <img src="INSERT LATER" alt="Friend Two">
+                                    <p>Friend 2</p>
+                                </div>
+                                <div class="friends-palette">
+                                    <img src="img/Friend-2.png" alt="Friend's Palette" style="width: 250px; height: auto;">
+                                </div>
+                                <div class="caption pt-2 px-3">
+                                    <p>Just figured out my palette!</p>
+                                </div>
+                                <div class="post-interaction pb-3">
+                                    <button class="like-btn btn btn-secondary">Like</button>
+                                    <button class="comment-btn btn btn-secondary">Comment</button>
+                                </div>
+                            </div>
+                            <!-- Post 3 -->
+                            <div class="palette-card mt-5 border border-dark border-2 text-center">
+                                <div class="friend-info pt-2">
+                                    <img src="INSERT LATER" alt="Friend Three">
+                                    <p>Friend 3</p>
+                                </div>
+                                <div class="friends-palette">
+                                    <img src="img/Friend-3.png" alt="Friend's Palette" style="width: 250px; height: auto;">
+                                </div>
+                                <div class="caption pt-2 px-3">
+                                    <p>Does my palette work for someone with red hair?</p>
+                                </div>
+                                <div class="post-interaction pb-3">
+                                    <button class="like-btn btn btn-secondary">Like</button>
+                                    <button class="comment-btn btn btn-secondary">Comment</button>
+                                </div>
+                            </div>
+                            <!-- Post 4 -->
+                            <div class="palette-card mt-5 border border-dark border-2 text-center pt-2">
+                                <div class="friend-info">
+                                    <img src="INSERT LATER" alt="Friend Four">
+                                    <p>Friend 4</p>
+                                </div>
+                                <div class="friends-palette">
+                                    <img src="img/Friend-4.png" alt="Friend's Palette" style="width: 250px; height: auto;">
+                                </div>
+                                <div class="caption pt-2 px-3">
+                                    <p>New palette!</p>
+                                </div>
+                                <div class="post-interaction pb-3">
+                                    <button class="like-btn btn btn-secondary">Like</button>
+                                    <button class="comment-btn btn btn-secondary">Comment</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </main>
         <script src="js/index.js"></script>
     </body>
