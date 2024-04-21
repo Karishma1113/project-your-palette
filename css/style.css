@@ -150,10 +150,16 @@ section.info > p {
 
 .btn-color {
     width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  background-size: cover;
-  border-radius: 5px;
+    height: 50px;
+    margin-right: 10px;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.custom-palette {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 
 /* Media Queries */
