@@ -3,115 +3,81 @@
 }
 
 nav {
-    position: fixed;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
     text-align: center;
 }
+
+img.logo {
+    width: 80px;
+}
+
+a.navbar-brand {
+    font-family: 'Water Brush', cursive, sans-serif;
+    font-size: 30px;
+}
+
+a.nav-link:hover {
+    border-bottom: solid 1.25px blue;
+}
+
+/* Home Page Styling */
+
 
 /* Quiz Page Styling */
 
+.quiz-page, footer {
+    background-color: #fbfbfb;
+}
+
 .quiz-intro {
+    font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
-    margin-top: 1rem;
 }
 
 .quiz-intro h1 {
-    font-size: 1.65rem;
+    font-size: 2rem;
     margin: 0;
-    padding: 1rem 3.4rem;
+    padding: 2rem 3.4rem 1rem 3.4rem;
 }
 
 .quiz-intro p {
     font-size: 1rem;
-    margin: 0;
+    margin: 0 0 2em 0;
     padding: 1rem;
 }
 
 .quiz-container {
-    background-color: aliceblue;
+    max-width: 400px;
+    background-color: rgb(228, 239, 249);
     border-radius: 25px;
-    margin: 2rem 0;
+    margin: 0 auto 2rem auto;
     padding: 1rem 2.5rem;
 }
 
 .question {
+    font-family: "Montserrat", sans-serif;
     margin-top: 1em;
     margin-bottom: 2em;
 }
 
 .question > p {
     text-align: center;
+    font-weight: 500;
     padding: 1rem 0;
     margin-bottom: 0;
     margin-top: 0.5rem;
 }
 
-footer {
-    margin-bottom: 0;
+.question-answers {
+    font-size: 0.95rem;
 }
 
 footer > p {
     font-size: 0.75rem;
-    margin: 5px;
-}
-
-@media (min-width: 576px) {
-    .quiz-container {
-        max-width: 500px;
-        margin: 0 auto 2rem auto;
-    }
-
-    .quiz-intro p {
-        padding: 1rem 3rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .quiz-container {
-        max-width: 700px;
-    }
-
-    .question-answers {
-        margin-left: 5rem;
-    }
-
-    .quiz-intro p {
-        padding: 1rem 5rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .quiz-container {
-        max-width: 900px;
-    }
-
-    .question-answers {
-        margin-left: 8rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .quiz-container {
-        max-width: 1000px;
-    }
-
-    .question-answers {
-        margin-left: 12rem;
-    }
-    .quiz-intro p {
-        padding: 1rem 10rem;
-    }
-}
-
-@media (min-width: 1400px) {
-
-    .question-answers {
-        margin-left: 12rem;
-    }
-
-    .quiz-intro p {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+    margin: 0;
+    padding: 3em 0 0.25em 0.5em;
 }
 
 /* Profile Page Styling */
@@ -148,4 +114,123 @@ section.info > p {
 
 .profile img {
     max-width: 100%;
+<<<<<<< HEAD
+=======
+}
+
+/* Create Page Styling */
+
+ .heading {
+    text-align: center;
+    margin-top: 1rem
+}
+
+.create-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+.selections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.color-img-container {
+    display: flex;
+}
+
+.color-img-container img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px; /
+}
+
+.btn-color {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.custom-palette {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 500px;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 700px;
+    }
+
+    .question-answers {
+        margin-left: 5rem;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 900px;
+    }
+
+    .question-answers {
+        margin-left: 8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 1000px;
+    }
+
+    .question-answers {
+        margin-left: 12rem;
+    }
+    .quiz-intro p {
+        padding: 1rem 10rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* Quiz Page */
+    
+    .question-answers {
+        margin-left: 12rem;
+    }
+
+    .quiz-intro p {
+        max-width: 1200px;
+        margin: 0 auto 1.5em auto;
+    }
+>>>>>>> 3fc7a0daa78294eeb34dde14b8c93ef9f43e8636
 }
