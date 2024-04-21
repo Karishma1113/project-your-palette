@@ -22,8 +22,22 @@ a.nav-link:hover {
     border-bottom: solid 1.25px blue;
 }
 
+footer > p {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 3em 0 0.25em 0.5em;
+}
+
 /* Home Page Styling */
 
+.homepage {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.homepage > span {
+    font-size: 1.1rem;
+}
 
 /* Quiz Page Styling */
 
@@ -72,12 +86,6 @@ a.nav-link:hover {
 
 .question-answers {
     font-size: 0.95rem;
-}
-
-footer > p {
-    font-size: 0.75rem;
-    margin: 0;
-    padding: 3em 0 0.25em 0.5em;
 }
 
 /* Explore Page Styling */
@@ -145,8 +153,6 @@ section.info > p {
 
 .profile img {
     max-width: 100%;
-<<<<<<< HEAD
-=======
 }
 
 /* Create Page Styling */
@@ -341,5 +347,4 @@ section.info > p {
     .caption p {
         margin-top: 1rem;
     }
->>>>>>> 3fc7a0daa78294eeb34dde14b8c93ef9f43e8636
 }
