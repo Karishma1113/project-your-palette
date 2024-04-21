@@ -107,6 +107,9 @@ footer > p {
     background-color: aliceblue;
 }
 
+.comments-section li {
+    font-family: "Montserrat", sans-serif;
+}
 
 /* Profile Page Styling */
 
