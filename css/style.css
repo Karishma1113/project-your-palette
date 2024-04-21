@@ -26,6 +26,7 @@ a.nav-link:hover {
 
 
 /* Quiz Page Styling */
+
 .quiz-page, footer {
     background-color: #fbfbfb;
 }
@@ -79,64 +80,6 @@ footer > p {
     padding: 3em 0 0.25em 0.5em;
 }
 
-@media (min-width: 576px) {
-    .quiz-container {
-        max-width: 500px;
-    }
-
-    .quiz-intro p {
-        padding: 1rem 3rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .quiz-container {
-        max-width: 700px;
-    }
-
-    .question-answers {
-        margin-left: 5rem;
-    }
-
-    .quiz-intro p {
-        padding: 1rem 5rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .quiz-container {
-        max-width: 900px;
-    }
-
-    .question-answers {
-        margin-left: 8rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .quiz-container {
-        max-width: 1000px;
-    }
-
-    .question-answers {
-        margin-left: 12rem;
-    }
-    .quiz-intro p {
-        padding: 1rem 10rem;
-    }
-}
-
-@media (min-width: 1400px) {
-    .question-answers {
-        margin-left: 12rem;
-    }
-
-    .quiz-intro p {
-        max-width: 1200px;
-        margin: 0 auto 1.5em auto;
-    }
-}
-
 /* Profile Page Styling */
 
 .profile div.container {
@@ -174,6 +117,7 @@ section.info > p {
 }
 
 /* Create Page Styling */
+
  .heading {
     text-align: center;
     margin-top: 1rem
@@ -210,4 +154,74 @@ section.info > p {
   margin-right: 10px;
   background-size: cover;
   border-radius: 5px;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 500px;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 700px;
+    }
+
+    .question-answers {
+        margin-left: 5rem;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 900px;
+    }
+
+    .question-answers {
+        margin-left: 8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 1000px;
+    }
+
+    .question-answers {
+        margin-left: 12rem;
+    }
+    .quiz-intro p {
+        padding: 1rem 10rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* Quiz Page */
+    
+    .question-answers {
+        margin-left: 12rem;
+    }
+
+    .quiz-intro p {
+        max-width: 1200px;
+        margin: 0 auto 1.5em auto;
+    }
 }
