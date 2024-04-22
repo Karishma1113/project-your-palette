@@ -179,25 +179,32 @@ section.info > p {
 
 .color-img-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .color-img-container img {
     width: 100px;
     height: 100px;
-    margin-right: 10px; /
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .btn-color {
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    margin-left: 10px;
     margin-right: 10px;
-    background-size: cover;
-    border-radius: 5px;
 }
 
 .custom-palette {
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn-reveal {
     margin-bottom: 3rem;
 }
 
@@ -223,6 +230,13 @@ section.info > p {
     .friends-palette img {
         max-width: 200px;
     }
+
+    /* Create Page */
+    .btn-color {
+        width: 100px;
+        height: 100px;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -253,6 +267,12 @@ section.info > p {
     .caption p {
         margin-top: 1rem;
     }
+
+    /* Create Page */
+    .btn-color {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -282,6 +302,12 @@ section.info > p {
 
     .caption p {
         margin-top: 1rem;
+    }
+
+    /* Create Page */
+    .btn-color {
+        width: 180px;
+        height: 180px;
     }
 }
 
@@ -320,9 +346,16 @@ section.info > p {
     .caption p {
         margin-top: 1rem;
     }
+
+    /* Create Page */
+    .btn-color {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 @media (min-width: 1400px) {
+    
     /* Quiz Page */
     
     .question-answers {
