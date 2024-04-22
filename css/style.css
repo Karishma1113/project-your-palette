@@ -235,9 +235,14 @@ section.info > p {
 
 /* Create Page Styling */
 
- .heading {
+ .create-heading h1 {
+    font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
     margin-top: 1rem
+}
+
+.selections h2, .color-palette h2 {
+    font-family: "Montserrat", sans-serif;
 }
 
 .create-container {
@@ -277,10 +282,6 @@ section.info > p {
 .custom-palette {
     text-align: center;
     margin-top: 1rem;
-    margin-bottom: 3rem;
-}
-
-.btn-reveal {
     margin-bottom: 3rem;
 }
 
