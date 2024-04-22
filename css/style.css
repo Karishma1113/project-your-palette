@@ -30,24 +30,61 @@ footer > p {
 
 /* Home Page Styling */
 
-.homepage {
+.homepage, .quiz-intro, .explore-title {
+    font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
-    margin-top: 1rem;
 }
 
-.homepage > span {
-    font-size: 1.1rem;
+.homepage {
+    margin-top: 1.5rem;
+}
+
+.homepage > h1 {
+    font-size: 3rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+.homepage span {
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.5rem 0 2rem 0;
+}
+
+.homepage p {
+    max-width: 370px;
+    margin: 0 auto;
+    font-size: 0.99rem;
+}
+
+.home-main-selection {
+    margin: 5rem 3rem 0 3rem;
+    padding: 1rem;
+}
+
+.home-main-selection > a, .home-selection > a {
+   text-decoration: none;
+   color: #070707;
+}
+
+.home-main-selection img, .home-selection img {
+    height: 250px;
+    width: auto;
+}
+
+.col-sm-6 {
+    padding: 0;
+}
+
+.home-selection {
+    margin-top: 3rem;
+    padding: 0.5rem;
 }
 
 /* Quiz Page Styling */
 
 .quiz-page, footer {
     background-color: #fbfbfb;
-}
-
-.quiz-intro, .explore-title h1 {
-    font-family: "Sedan", "Montserrat", sans-serif;
-    text-align: center;
 }
 
 .quiz-intro h1 {
@@ -111,7 +148,7 @@ footer > p {
     max-width: 200px;
 }
 
-.explore-background {
+.explore-background, .sign-in > form {
     background-color: aliceblue;
 }
 
@@ -162,7 +199,7 @@ footer > p {
 
 /* Profile Page Styling */
 
-.profile div.container {
+.profile div.container, .create-container {
     background-color: aliceblue;
     border-radius: 25px;
     margin: 2rem auto;
@@ -207,8 +244,6 @@ section.info > p {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: aliceblue;
-    border-radius: 25px;
 }
 
 .selections {
@@ -251,10 +286,6 @@ section.info > p {
 
 /* sign-in Page Styling */
 
-.sign-in > form {
-    background-color: aliceblue;
-  }
-
 .sign-in > input {
     width: 100%;
     padding: 12px 20px;
@@ -279,6 +310,14 @@ section.info > p {
 /* Media Queries */
 
 @media (min-width: 576px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 550px;
+        font-size: 1rem;
+    }
+
     /* Quiz Page */
 
     .quiz-container {
@@ -308,6 +347,13 @@ section.info > p {
 }
 
 @media (min-width: 768px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 725px;
+    }
+
     /* Quiz Page */
 
     .quiz-container {
@@ -348,6 +394,21 @@ section.info > p {
 }
 
 @media (min-width: 992px) {
+
+    /* Home Page */
+
+    .homepage > h1 {
+        font-size: 4.5rem;
+    }
+
+    .homepage p {
+        max-width: 980px;
+    }
+
+    .homepage span {
+        font-size: 2rem;
+    }
+
     /* Quiz Page */
 
     .quiz-container {
@@ -384,6 +445,13 @@ section.info > p {
 }
 
 @media (min-width: 1200px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 1150px;
+    }
+
     /* Quiz Page */
 
     .quiz-container {
@@ -427,7 +495,13 @@ section.info > p {
 }
 
 @media (min-width: 1400px) {
-    
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 1375px;
+    }
+
     /* Quiz Page */
     
     .question-answers {
@@ -438,8 +512,6 @@ section.info > p {
         max-width: 1200px;
         margin: 0 auto 1.5em auto;
     }
-<<<<<<< HEAD
-=======
 
     /* Explore Page */
 
@@ -454,5 +526,4 @@ section.info > p {
     .caption p {
         margin-top: 1rem;
     }
->>>>>>> 3460d6023ac89094f7e33294863065b8b82f45b9
 }
