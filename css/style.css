@@ -22,8 +22,22 @@ a.nav-link:hover {
     border-bottom: solid 1.25px blue;
 }
 
+footer > p {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 3em 0 0.25em 0.5em;
+}
+
 /* Home Page Styling */
 
+.homepage {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.homepage > span {
+    font-size: 1.1rem;
+}
 
 /* Quiz Page Styling */
 
@@ -31,7 +45,7 @@ a.nav-link:hover {
     background-color: #fbfbfb;
 }
 
-.quiz-intro {
+.quiz-intro, .explore-title h1 {
     font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
 }
@@ -74,10 +88,35 @@ a.nav-link:hover {
     font-size: 0.95rem;
 }
 
-footer > p {
-    font-size: 0.75rem;
-    margin: 0;
-    padding: 3em 0 0.25em 0.5em;
+/* Explore Page Styling */
+.all-palettes p, .btn {
+    font-family: "Montserrat", sans-serif;
+}
+
+.palette-card {
+    margin-top: 5rem;
+    text-align: center;
+    background-color: white;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px auto;
+}
+
+.explore-title {
+    margin-bottom: 2rem;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.friends-palette img {
+    max-width: 200px;
+}
+
+.explore-background {
+    background-color: aliceblue;
+}
+
+.comments-section li {
+    font-family: "Montserrat", sans-serif;
 }
 
 /* Profile Page Styling */
@@ -201,6 +240,16 @@ section.info > p {
     .quiz-intro p {
         padding: 1rem 3rem;
     }
+
+    /* Explore Page */
+
+    .palette-card {
+       max-width: 70%;
+    }
+
+    .friends-palette img {
+        max-width: 200px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -217,6 +266,20 @@ section.info > p {
     .quiz-intro p {
         padding: 1rem 5rem;
     }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 500px;
+     }
+
+     .friends-palette img {
+        max-width: 230px;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -228,6 +291,24 @@ section.info > p {
 
     .question-answers {
         margin-left: 8rem;
+    }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 500px;
+     }
+
+     .friends-palette img {
+        max-width: 250px;
+    }
+
+    .post-interaction .btn {
+        margin: 1rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
     }
 }
 
@@ -244,6 +325,28 @@ section.info > p {
     .quiz-intro p {
         padding: 1rem 10rem;
     }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 80%;
+    }
+
+    .explore-title {
+        margin-bottom: 3rem;
+    }
+
+    .friends-palette img {
+        max-width: 300px;
+    }
+
+    .post-interaction .btn {
+        margin: 1rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -257,4 +360,21 @@ section.info > p {
         max-width: 1200px;
         margin: 0 auto 1.5em auto;
     }
+<<<<<<< HEAD
+=======
+
+    /* Explore Page */
+
+    .friends-palette img {
+        max-width: 400px;
+    }
+
+    .post-interaction .btn {
+        margin: 1.5rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
+>>>>>>> 3460d6023ac89094f7e33294863065b8b82f45b9
 }
