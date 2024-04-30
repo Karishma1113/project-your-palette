@@ -1,13 +1,530 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+img.logo {
+    width: 80px;
+}
+
+a.navbar-brand {
+    font-family: 'Water Brush', cursive, sans-serif;
+    font-size: 30px;
+}
+
+a.nav-link:hover {
+    border-bottom: solid 1.25px blue;
+}
+
+footer > p {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 3em 0 0.25em 0.5em;
+}
+
+/* Home Page Styling */
+
+.homepage, .quiz-intro, .explore-title {
+    font-family: "Sedan", "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.homepage {
+    margin-top: 1.5rem;
+}
+
+.homepage > h1 {
+    font-size: 3rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+.homepage span {
+    display: block;
+    font-size: 1.25rem;
+    padding: 0.5rem 0 2rem 0;
+}
+
+.homepage p {
+    max-width: 370px;
+    margin: 0 auto;
+    font-size: 0.99rem;
+}
+
+.home-main-selection {
+    margin: 5rem 3rem 0 3rem;
+    padding: 1rem;
+}
+
+.home-main-selection > a, .home-selection > a {
+   text-decoration: none;
+   color: #070707;
+}
+
+.home-main-selection img, .home-selection img {
+    height: 250px;
+    width: auto;
+}
+
+.col-sm-6 {
+    padding: 0;
+}
+
+.home-selection {
+    margin-top: 3rem;
+    padding: 0.5rem;
+}
+
+/* Quiz Page Styling */
+
+.quiz-page, footer {
+    background-color: #fbfbfb;
+}
+
+.quiz-intro h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 2rem 3.4rem 1rem 3.4rem;
+}
+
+.quiz-intro p {
+    font-size: 1rem;
+    margin: 0 0 2em 0;
+    padding: 1rem;
+}
+
+.quiz-container {
+    max-width: 400px;
+    background-color: rgb(228, 239, 249);
+    border-radius: 25px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem 2.5rem;
+}
+
+.question {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.question > p {
+    text-align: center;
+    font-weight: 500;
+    padding: 1rem 0;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+.question-answers {
+    font-size: 0.95rem;
+}
+
+/* Explore Page Styling */
+.all-palettes p, .btn {
+    font-family: "Montserrat", sans-serif;
+}
+
+.palette-card {
+    margin-top: 5rem;
+    text-align: center;
+    background-color: white;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px auto;
+}
+
+.explore-title {
+    margin-bottom: 2rem;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.friends-palette img {
+    max-width: 200px;
+}
+
+.explore-background, .sign-in > form {
+    background-color: aliceblue;
+}
+
+.comments-section li {
+    font-family: "Montserrat", sans-serif;
+}
+
+.fake-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fake-modal-content {
+    width: 300px;
+    max-width: 90%;
+    max-height: 95vh;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.fake-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fake-modal-title {
+    margin: 0;
+}
+
+.fake-modal-body {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.fake-modal-title p {
+    font-weight: bold;
+}
+
+/* Profile Page Styling */
+
+.profile div.container, .create-container {
+    background-color: aliceblue;
+    border-radius: 25px;
+    margin: 2rem auto;
+    padding: 1rem 2.5rem;
+} 
+section.profile-name {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+section.picture > img {
+    display: flex;
+    border-radius: 50%;
+    place-items: center;
+    margin: 20px auto;
+    height: 15vh;
+}
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-bottom: 40px;
+}
+
+section.info > p {
+    height: 6px;
+}
+
+.profile img {
+    max-width: 100%;
+}
+
+/* Create Page Styling */
+
+ .create-heading h1 {
+    font-family: "Sedan", "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 1rem
+}
+
+.selections h2, .color-palette h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.create-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.selections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.color-img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-img-container img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.btn-color {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.custom-palette {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* sign-in Page Styling */
+
+.sign-in > input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.sign-in img {
+    margin: 20px auto;
+    width: 100%;
+    height: 100%;
+}
+
+.sign-in form {
+    display: flex;
+    place-items: center;
+    margin: auto;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 550px;
+        font-size: 1rem;
+    }
+
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 500px;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 3rem;
+    }
+
+    /* Explore Page */
+
+    .palette-card {
+       max-width: 70%;
+    }
+
+    .friends-palette img {
+        max-width: 200px;
+    }
+
+    /* Create Page */
+    .btn-color {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 725px;
+    }
+
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 700px;
+    }
+
+    .question-answers {
+        margin-left: 5rem;
+    }
+
+    .quiz-intro p {
+        padding: 1rem 5rem;
+    }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 500px;
+     }
+
+     .friends-palette img {
+        max-width: 230px;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
+
+    .fake-modal-content {
+        width: 400px;
+    }
+
+    /* Create Page */
+    .btn-color {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Home Page */
+
+    .homepage > h1 {
+        font-size: 4.5rem;
+    }
+
+    .homepage p {
+        max-width: 980px;
+    }
+
+    .homepage span {
+        font-size: 2rem;
+    }
+
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 900px;
+    }
+
+    .question-answers {
+        margin-left: 8rem;
+    }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 500px;
+     }
+
+     .friends-palette img {
+        max-width: 250px;
+    }
+
+    .post-interaction .btn {
+        margin: 1rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
+
+    /* Create Page */
+    .btn-color {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 1150px;
+    }
+
+    /* Quiz Page */
+
+    .quiz-container {
+        max-width: 1000px;
+    }
+
+    .question-answers {
+        margin-left: 12rem;
+    }
+    .quiz-intro p {
+        padding: 1rem 10rem;
+    }
+
+    /* Explore Page */
+
+    .palette-card {
+        max-width: 80%;
+    }
+
+    .explore-title {
+        margin-bottom: 3rem;
+    }
+
+    .friends-palette img {
+        max-width: 300px;
+    }
+
+    .post-interaction .btn {
+        margin: 1rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
+
+    /* Create Page */
+    .btn-color {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* Home Page */
+
+    .homepage p {
+        max-width: 1375px;
+    }
+
+    /* Quiz Page */
+    
+    .question-answers {
+        margin-left: 12rem;
+    }
+
+    .quiz-intro p {
+        max-width: 1200px;
+        margin: 0 auto 1.5em auto;
+    }
+
+    /* Explore Page */
+
+    .friends-palette img {
+        max-width: 400px;
+    }
+
+    .post-interaction .btn {
+        margin: 1.5rem;
+    }
+
+    .caption p {
+        margin-top: 1rem;
+    }
 }

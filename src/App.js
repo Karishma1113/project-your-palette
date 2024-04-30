@@ -1,6 +1,9 @@
+import { Homepage } from "./Homepage";
+
+
 function App() {
   return (
-    <h1>I made my first react app for my project</h1>
+    <Homepage />
   );
 }
 
