@@ -9,16 +9,16 @@ nav {
     text-align: center;
 }
 
-img.logo {
+.logo {
     width: 80px;
 }
 
-a.navbar-brand {
+.navbar-brand {
     font-family: 'Water Brush', cursive, sans-serif;
     font-size: 30px;
 }
 
-a.nav-link:hover {
+.nav-link:hover {
     border-bottom: solid 1.25px blue;
 }
 
@@ -199,18 +199,18 @@ footer > p {
 
 /* Profile Page Styling */
 
-.profile div.container, .create-container {
+.profile .container, .create-container {
     background-color: aliceblue;
     border-radius: 25px;
     margin: 2rem auto;
     padding: 1rem 2.5rem;
 } 
-section.profile-name {
+.profile-name {
     text-align: center;
     margin-top: 1rem;
 }
 
-section.picture > img {
+.picture > img {
     display: flex;
     border-radius: 50%;
     place-items: center;
@@ -218,14 +218,14 @@ section.picture > img {
     height: 15vh;
 }
 
-section.info {
+.info {
     display: flex;
     flex-direction: column;
     place-items: center;
     margin-bottom: 40px;
 }
 
-section.info > p {
+.info > p {
     height: 6px;
 }
 
