@@ -1,9 +1,11 @@
-import { Homepage } from "./Homepage";
+import HomePage from "./components/Homepage";
+import QuizPage from "./components/Quizpage";
 
 
 function App() {
   return (
-    <Homepage />
+    // <HomePage />
+    <QuizPage />
   );
 }
 
