@@ -95,21 +95,22 @@ function QuizPage() {
         }));
     };
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log('Quiz Results:', quizResults);
-    //     setIsSubmitted(true);
-    //     // Here, you would handle the quiz result logic, e.g., calculating the user's color season.
-    // };
+     const isFormComplete = () => {
+        return questions.every(question => quizResults.hasOwnProperty(question.name));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (isSubmitted) {
-            setQuizResults({});
-            setIsSubmitted(false);
-        } else {
+        if (isFormComplete()) {
             setIsSubmitted(true);
+        } else {
+            alert("Please answer all questions before submitting the quiz.");
         }
+    };
+
+    const handleRetakeQuiz = () => {
+        setQuizResults({});
+        setIsSubmitted(false);
     };
 
     return (
@@ -128,14 +129,18 @@ function QuizPage() {
                             ))}
                         </section>
                         <div className="d-flex justify-content-center">
-                            <button className="btn" type="submit" aria-label="Reveal My Colors!">Reveal My Colors!</button>
+                            <button className="btn submit-button" type="submit" disabled={!isFormComplete()}>
+                                Reveal My Colors!
+                            </button>
                         </div>
                     </form>
                 ) : (
                     <div className="results-container">
                         <QuizResults results={quizResults} />
                         <div className="d-flex justify-content-center">
-                            <button className="btn" onClick={handleSubmit} aria-label="Retake Quiz">Retake Quiz</button>
+                            <button className="btn submit-button" onClick={handleRetakeQuiz} aria-label="Retake Quiz">
+                                Retake Quiz
+                            </button>
                         </div>
                     </div>
                 )}

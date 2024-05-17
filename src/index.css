@@ -124,6 +124,17 @@ footer > p {
     font-size: 0.95rem;
 }
 
+/* Quiz Results */
+
+.quiz-results {
+    text-align: center;
+}
+
+.season-images {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
 /* Explore Page Styling */
 .all-palettes p, .btn {
     font-family: "Montserrat", sans-serif;
