@@ -37,16 +37,16 @@
             </nav>
         </header>
         <main class="sign-in">
-            <form action="action_page.php" method="post">
+            <form action="./profile.html" method="post">
                 <div class="imgcontainer">
-                    <img src="img/palette_logo_without_bg.png" alt="Logo">
+                    <img src="img/palette_logo_without_bg.png" alt="Logo or Your Palette">
                 </div>
                 <div class="container">
                     <label for="ID"><b>Username:</b></label>
-                    <input placeholder="Enter Username" name="ID" required>
+                    <input type="text" placeholder="Enter Username" name="ID" id="ID" required>
                     <label for="password"><b>Password:</b></label>
-                    <input placeholder="Enter Password" name="password" required>
-                    <button type="submit"><a class="nav-link active" href="profile.html">Login</a></button>
+                    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                    <button type="submit" class="btn btn-primary btn-sm">Login</button>
                 </div>
             </form>
         </main>
