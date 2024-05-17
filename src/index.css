@@ -5,20 +5,22 @@
 nav {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.2rem;
     text-align: center;
 }
 
-img.logo {
-    width: 80px;
+.logo {
+    width: 100px;
 }
 
-a.navbar-brand {
+.navbar-brand-link {
+    color: black;
+    text-decoration: none;
     font-family: 'Water Brush', cursive, sans-serif;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
-a.nav-link:hover {
+.nav-link:hover {
     border-bottom: solid 1.25px blue;
 }
 
@@ -58,27 +60,24 @@ footer > p {
 }
 
 .home-main-selection {
-    margin: 5rem 3rem 0 3rem;
-    padding: 1rem;
+    width: 75%;
+    margin: 2rem auto;
+    padding-top: 1rem;
 }
 
-.home-main-selection > a, .home-selection > a {
+.home-main-selection:hover {
+    border: 1px solid #0096FF;
+}
+
+.home-main-selection > a {
    text-decoration: none;
    color: #070707;
 }
 
-.home-main-selection img, .home-selection img {
-    height: 250px;
+.home-main-selection img {
+    height: 200px;
     width: auto;
-}
-
-.col-sm-6 {
-    padding: 0;
-}
-
-.home-selection {
-    margin-top: 3rem;
-    padding: 0.5rem;
+    margin-bottom: 1%;
 }
 
 /* Quiz Page Styling */
@@ -319,6 +318,10 @@ section.info > p {
         font-size: 1rem;
     }
 
+    .home-main-selection img {
+        height: 300px;
+    }   
+
     /* Quiz Page */
 
     .quiz-container {
@@ -353,6 +356,10 @@ section.info > p {
 
     .homepage p {
         max-width: 725px;
+    }
+
+    .home-main-selection img{
+        height: 400px;
     }
 
     /* Quiz Page */
@@ -410,6 +417,10 @@ section.info > p {
         font-size: 2rem;
     }
 
+    .home-main-selection img {
+        height: 450px;
+    }
+
     /* Quiz Page */
 
     .quiz-container {
@@ -451,6 +462,10 @@ section.info > p {
 
     .homepage p {
         max-width: 1150px;
+    }
+
+    .home-main-selection img {
+        height: 500px;
     }
 
     /* Quiz Page */
@@ -501,6 +516,10 @@ section.info > p {
 
     .homepage p {
         max-width: 1375px;
+    }
+
+    .home-main-selection img {
+        height: 550px;
     }
 
     /* Quiz Page */
