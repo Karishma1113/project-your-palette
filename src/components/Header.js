@@ -1,7 +1,7 @@
 function PageHeader(props) {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="index.html"><img src="img/palette_logo_without_bg.png" className="logo" alt="Your Pal-ette Logo" />Your Pal-ette</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
