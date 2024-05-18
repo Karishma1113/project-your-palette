@@ -9,7 +9,7 @@ function SignInPage(props) {
             <main className="sign-in">
                 <form action="./profile.html" method="post">
                     <div className="imgcontainer">
-                        <img src="img/palette_logo_without_bg.png" alt="Logo or Your Palette" />
+                        <img src="img/palette_logo_without_bg.png" alt="Logo of website Your Palette" />
                     </div>
                     <div className="container">
                         <label htmlFor="ID"><b>Username:</b></label>

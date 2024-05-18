@@ -70,7 +70,7 @@ const ExplorePage = () => {
                                             <p className="friend-name ps-2 pt-3">{post.friendName}</p>
                                         </div>
                                         <div className="friends-palette">
-                                            <img src={post.paletteImage} alt="Friend's Palette" />
+                                            <img src={post.paletteImage} alt="Friend's Color Palette" />
                                         </div>
                                         <div className="caption pt-2 px-3">
                                             <p>{post.caption}</p>
