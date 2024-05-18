@@ -40,7 +40,7 @@ function ProflePage(props) {
                                                 </div>
                                                 <div className="col-sm">
                                                     <h2 className="card-title">{palette.title}</h2>
-                                                    <button className="btn btn-info">Dislike</button>
+                                                    <button className="btn btn-info">Unsave</button>
                                                 </div>
                                             </div>
                                         </div>
