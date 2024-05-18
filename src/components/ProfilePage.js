@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
-function Profile(props) {
+function ProflePage(props) {
     return (
         <body>
             <PageHeader />
@@ -56,4 +56,4 @@ function Profile(props) {
     );
 };
 
-export default Profile;
+export default ProflePage;

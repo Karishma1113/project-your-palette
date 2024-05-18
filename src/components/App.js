@@ -3,15 +3,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import HomePage from "./Homepage";
 import QuizPage from "./Quizpage";
 import SignInPage from './SignInPage';
-import ProfilePage from './ProfilePage';
+import ProflePage from './ProfilePage';
 
 function App(props) {
   return (
     <div>
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <QuizPage /> */}
-      {/* {<SignInPage />} */}
-      {<ProfilePage />}
+      {/* <SignInPage /> */}
+      {/* <ProflePage /> */}
     </div>
   );
 }
