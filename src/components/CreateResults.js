@@ -40,15 +40,15 @@ function CreateResults(props) {
                             <h2>Color Choices:</h2>
                             <div className="color-choice">
                                 <div className="color-img-container">
-                                    <button type="button" className="btn btn-color color1" aria-label='yellow'></button>
-                                    <button type="button" className="btn btn-color color2" aria-label='orange'></button>
-                                    <button type="button" className="btn btn-color color3" aria-label='dark green'></button>
-                                    <button type="button" className="btn btn-color color4" aria-label='dark blue'></button>
-                                    <button type="button" className="btn btn-color color5" aria-label='plum'></button>
-                                    <button type="button" className="btn btn-color color6" aria-label='light green'></button>
-                                    <button type="button" className="btn btn-color color7" aria-label='pink red'></button>
-                                    <button type="button" className="btn btn-color color8" aria-label='light blue'></button>
-                                    <button type="button" className="btn btn-color color9" aria-label='purple'></button>
+                                    <button type="button" className="btn btn-color color1" aria-label='color yellow'></button>
+                                    <button type="button" className="btn btn-color color2" aria-label='color orange'></button>
+                                    <button type="button" className="btn btn-color color3" aria-label='color dark green'></button>
+                                    <button type="button" className="btn btn-color color4" aria-label='color dark blue'></button>
+                                    <button type="button" className="btn btn-color color5" aria-label='color plum'></button>
+                                    <button type="button" className="btn btn-color color6" aria-label='color light green'></button>
+                                    <button type="button" className="btn btn-color color7" aria-label='color pink red'></button>
+                                    <button type="button" className="btn btn-color color8" aria-label='color light blue'></button>
+                                    <button type="button" className="btn btn-color color9" aria-label='color purple'></button>
                                 </div>
                             </div>
                         </div>
@@ -61,10 +61,10 @@ function CreateResults(props) {
                         <p>Here is your customized seasonal color palette:</p>
                         <div className="color-choice">
                             <div className="color-img-container"></div>
-                                <button type="button" className="btn btn-color color1" aria-label='yellow'></button>
-                                <button type="button" className="btn btn-color color4" aria-label='dark blue'></button>
-                                <button type="button" className="btn btn-color color5" aria-label='plum'></button>
-                                <button type="button" className="btn btn-color color9" aria-label='purple'></button>
+                                <button type="button" className="btn btn-color color1" aria-label='color yellow'></button>
+                                <button type="button" className="btn btn-color color4" aria-label='color dark blue'></button>
+                                <button type="button" className="btn btn-color color5" aria-label='color plum'></button>
+                                <button type="button" className="btn btn-color color9" aria-label='color purple'></button>
                         </div>
                     </div>
                 </section>
