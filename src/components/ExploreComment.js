@@ -20,7 +20,7 @@ const ExploreComment = () => {
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="commentModalLabel">Comments</h5>
-                                <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+                                <button type="button" className="btn-close" onClick={closeModal} aria-label="Close Button"></button>
                             </div>
                             <div className="modal-body">
                                 <p>User 1: Nice palette!</p>
