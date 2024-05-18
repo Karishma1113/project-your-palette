@@ -13,7 +13,7 @@ function ProflePage(props) {
                             <h1>The Dub</h1>
                         </section>
                         <section className="picture">
-                            <img src="img/husky.png" alt="Profile picture of husky" />
+                            <img src="img/husky.png" alt="Profile picture of a husky" />
                         </section>
                         <section className="info">
                             <p>Viewer: 999</p>
