@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PageHeader from './Header';
 import PageFooter from './Footer';
 
-export function CreateResults(props) {
+function CreateResults(props) {
     return (
         <div>
             <PageHeader />

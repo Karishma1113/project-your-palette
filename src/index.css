@@ -136,7 +136,8 @@ footer > p {
 }
 
 /* Explore Page Styling */
-.all-palettes p, .btn {
+
+.all-palettes p {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -366,7 +367,35 @@ section.info > p {
     background-image: url('img/color9.png');
 }
 
-/* sign-in Page Styling */
+.color1 {
+    background-image: url('img/color1.png');
+}
+.color2 {
+    background-image: url('img/color2.png');
+}
+.color3 {
+    background-image: url('img/color3.png');
+}
+.color4 {
+    background-image: url('img/color4.png');
+}
+.color5 {
+    background-image: url('img/color5.png');
+}
+.color6 {
+    background-image: url('img/color6.png');
+}
+.color7 {
+    background-image: url('img/color7.png');
+}
+.color8 {
+    background-image: url('img/color8.png');
+}
+.color9 {
+    background-image: url('img/color9.png');
+}
+
+/* Sign-In Page Styling */
 
 .sign-in > input {
     width: 100%;
