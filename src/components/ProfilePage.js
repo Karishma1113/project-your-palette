@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
-const Profile = () => {
+function Profile(props) {
     return (
         <body>
             <PageHeader />
