@@ -4,7 +4,8 @@ import HomePage from './HomePage';
 import QuizPage from "./QuizPage";
 import SignInPage from './SignInPage';
 import ProflePage from './ProfilePage';
-import CreatePage from './CreatePage';
+import Create from './Create';
+import CreateResults from './CreateResults';
 
 function App(props) {
   return (
@@ -13,7 +14,8 @@ function App(props) {
       {/* <QuizPage /> */}
       {/* <SignInPage /> */}
       {/* <ProflePage /> */}
-      {/* <CreatePage /> */}
+      {/* <Create /> */}
+      <CreateResults />
     </div>
   );
 }

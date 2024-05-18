@@ -265,10 +265,10 @@ footer > p {
 }
 
 .color-img-container img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    margin-left: 20px;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .btn-color {
@@ -283,6 +283,34 @@ footer > p {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
+}
+
+.color1 {
+    background-image: url('img/color1.png');
+}
+.color2 {
+    background-image: url('img/color2.png');
+}
+.color3 {
+    background-image: url('img/color3.png');
+}
+.color4 {
+    background-image: url('img/color4.png');
+}
+.color5 {
+    background-image: url('img/color5.png');
+}
+.color6 {
+    background-image: url('img/color6.png');
+}
+.color7 {
+    background-image: url('img/color7.png');
+}
+.color8 {
+    background-image: url('img/color8.png');
+}
+.color9 {
+    background-image: url('img/color9.png');
 }
 
 /* sign-in Page Styling */
