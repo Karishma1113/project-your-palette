@@ -7,8 +7,8 @@ import SignInPage from './SignInPage';
 function App(props) {
   return (
     <div>
-      {/* <HomePage /> */}
-      <QuizPage />
+      <HomePage />
+      {/* <QuizPage /> */}
       {/* {<SignInPage />} */}
     </div>
   );
