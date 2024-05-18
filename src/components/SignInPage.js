@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
-function SignInPage(props) {
+const SignInPage = () => {
     return (
         <body>
             <PageHeader />
