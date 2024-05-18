@@ -40,15 +40,15 @@ function Create(props) {
                             <h2>Color Choices:</h2>
                             <div className="color-choice">
                                 <div className="color-img-container">
-                                    <button type="button" className="btn btn-color color1" aria-label='color1'></button>
-                                    <button type="button" className="btn btn-color color2" aria-label='color2'></button>
-                                    <button type="button" className="btn btn-color color3" aria-label='color3'></button>
-                                    <button type="button" className="btn btn-color color4" aria-label='color4'></button>
-                                    <button type="button" className="btn btn-color color5" aria-label='color5'></button>
-                                    <button type="button" className="btn btn-color color6" aria-label='color6'></button>
-                                    <button type="button" className="btn btn-color color7" aria-label='color7'></button>
-                                    <button type="button" className="btn btn-color color8" aria-label='color8'></button>
-                                    <button type="button" className="btn btn-color color9" aria-label='color9'></button>
+                                    <button type="button" className="btn btn-color color1" aria-label='yellow'></button>
+                                    <button type="button" className="btn btn-color color2" aria-label='orange'></button>
+                                    <button type="button" className="btn btn-color color3" aria-label='dark green'></button>
+                                    <button type="button" className="btn btn-color color4" aria-label='dark blue'></button>
+                                    <button type="button" className="btn btn-color color5" aria-label='plum'></button>
+                                    <button type="button" className="btn btn-color color6" aria-label='light green'></button>
+                                    <button type="button" className="btn btn-color color7" aria-label='pink red'></button>
+                                    <button type="button" className="btn btn-color color8" aria-label='light blue'></button>
+                                    <button type="button" className="btn btn-color color9" aria-label='purple'></button>
                                 </div>
                             </div>
                         </div>
