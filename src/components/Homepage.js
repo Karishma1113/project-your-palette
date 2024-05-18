@@ -13,19 +13,19 @@ function HomePage() {
                     <div className="card-container">
                         <div className="card rounded-4 home-main-selection">
                             <a href="quiz.html">
-                                <img src="/img/Homepage/Quiz.jpeg" className="card-img-top" alt="AI generated image of note book, a color palette, and study material for different colors. Image generated through: https://deepai.org/machine-learning-model/text2img "/>
+                                <img src="/img/Homepage/Quiz.jpeg" className="card-img-top" alt="A note book, a color palette, and study material for different colors. Generated through: https://deepai.org/machine-learning-model/text2img "/>
                                 <h3>Discover your colors! <br/> Take our Quiz</h3>
                             </a>
                         </div>
                         <div className="card rounded-4 home-main-selection">
                             <a href="create.html">
-                                <img src="/img/Homepage/Create.jpeg" className="card-img-top" alt="AI generated image of a palette with variety of colors on it. Image generated through: https://deepai.org/machine-learning-model/text2img "/>
+                                <img src="/img/Homepage/Create.jpeg" className="card-img-top" alt="A palette with variety of colors on it. Generated through: https://deepai.org/machine-learning-model/text2img "/>
                                 <h3>Create your own Palette!</h3>
                             </a>
                         </div>
                         <div className="card rounded-4 home-main-selection">
                             <a href="explore.html">
-                                <img src="/img/Homepage/Discover.jpeg" className="card-img-top" alt="AI generated image of different colors palette strips. Image generated through: https://deepai.org/machine-learning-model/text2img "/>
+                                <img src="/img/Homepage/Discover.jpeg" className="card-img-top" alt="Different colors palette strips. Generated through: https://deepai.org/machine-learning-model/text2img "/>
                                 <h3>Share & Explore Palettes</h3>
                             </a>
                         </div>

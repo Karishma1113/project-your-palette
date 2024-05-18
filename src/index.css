@@ -136,7 +136,8 @@ footer > p {
 }
 
 /* Explore Page Styling */
-.all-palettes p, .btn {
+
+.all-palettes p {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -295,7 +296,7 @@ section.info > p {
     margin-bottom: 3rem;
 }
 
-/* sign-in Page Styling */
+/* Sign-In Page Styling */
 
 .sign-in > input {
     width: 100%;
