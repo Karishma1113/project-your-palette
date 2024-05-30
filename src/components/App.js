@@ -13,10 +13,10 @@ import ExplorePage from './ExplorePage';
 function App(props) {
   return (
     <div>
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <QuizPage /> */}
       {/* <SignInPage /> */}
-      {/* <ProfilePage /> */}
+      <ProfilePage />
       {/* <Create/> */}
       {/* <CreateResults/> */}
       {/* <ExplorePage /> */}
