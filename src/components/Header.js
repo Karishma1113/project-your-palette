@@ -15,16 +15,16 @@ function PageHeader(props) {
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul className="navbar-nav p-2">
                             <li className="nav-item px-4">
-                                <a className="nav-link active" aria-current="page" href="quiz.html">Quiz</a>
+                                <a className="nav-link active" aria-current="page" href="/quiz">Quiz</a>
                             </li>
                             <li className="nav-item px-4">
-                                <a className="nav-link active" href="create.html">Create</a>
+                                <a className="nav-link active" href="/create">Create</a>
                             </li>
                             <li className="nav-item px-4">
-                                <a className="nav-link active" href="explore.html">Explore</a>
+                                <a className="nav-link active" href="/explore">Explore</a>
                             </li>
                             <li className="nav-item px-4">
-                                <a className="nav-link active" href="sign-in.html">Profile</a>
+                                <a className="nav-link active" href="/signin">Profile</a>
                             </li>
                         </ul>
                     </div>

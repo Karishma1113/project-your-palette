@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
-function ProfilePage(props) {
+function ProfilePage() {
     const palettesData = [
         { title: "Kawaii", imgSrc: "img/kawaii.png" },
         { title: "Cappuccino", imgSrc: "img/Cappuccino.png" },
