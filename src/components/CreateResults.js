@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Create from './Create.js';
+import React from 'react';
 
 function CreateResults({ selectedColors }) {
     return (
