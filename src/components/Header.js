@@ -5,7 +5,7 @@ function PageHeader(props) {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand-link" href="index.html">
+                    <a className="navbar-brand-link" href="/homepage">
                         <img src="img/palette_logo_without_bg.png" className="logo" alt="Your Pal-ette Logo" />
                         Your Pal-ette
                     </a>
