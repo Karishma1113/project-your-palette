@@ -249,10 +249,14 @@ section.info > p {
 
 /* Create Page Styling */
 
+.page {
+    height: 1000px;
+}
+
 .create-heading h1 {
     font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
 .selections h2, .color-palette h2 {
@@ -271,7 +275,6 @@ section.info > p {
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
-
 
 .btn-color {
     width: 200px;
@@ -310,10 +313,45 @@ section.info > p {
     cursor: pointer;
 }
 
+.color-option.yellow {
+    background-color: #FFFF00;
+}
+
+.color-option.orange {
+    background-color: #FFA500;
+}
+
+.color-option.lightgreen {
+    background-color: #90EE90;
+}
+
+.color-option.pink {
+    background-color: #FF69B4;
+}
+
+.color-option.lightblue {
+    background-color: #ADD8E6;
+}
+
+.color-option.skyblue {
+    background-color: #87CEEB;
+}
+
+.color-option.gold {
+    background-color: #FFD700;
+}
+
+.color-option.green {
+    background-color: #7CFC00;
+}
+
+.color-option.orange-red {
+    background-color: #FF7F50;
+}
+
 .color-option:hover {
     border: 2px solid #000;
 }
-
 
 /* Sign-In Page Styling */
 

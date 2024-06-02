@@ -21,18 +21,18 @@ function Create(props) {
     };
 
     const colorOptions = [
-        { season: 'Spring', warmth: 'Light', colors: ['#FFFF00', '#FFA500', '#90EE90', '#FF69B4', '#ADD8E6', '#87CEEB', '#FFD700', '#7CFC00', '#FF7F50'] },
-        { season: 'Spring', warmth: 'Neutral', colors: ['#FFFF00', '#FFA500', '#ADD8E6', '#90EE90', '#FFD700', '#FF69B4', '#7CFC00', '#87CEEB', '#FF7F50'] },
-        { season: 'Spring', warmth: 'Deep', colors: ['#FFD700', '#FF69B4', '#FFA500', '#7CFC00', '#90EE90', '#FFFF00', '#FF7F50', '#87CEEB', '#ADD8E6'] },
-        { season: 'Summer', warmth: 'Light', colors: ['#FFA500', '#FFD700', '#FF69B4', '#FF7F50', '#90EE90', '#FFFF00', '#87CEEB', '#ADD8E6', '#7CFC00'] },
-        { season: 'Summer', warmth: 'Neutral', colors: ['#FFA500', '#FFD700', '#90EE90', '#FF69B4', '#FFFF00', '#87CEEB', '#7CFC00', '#FF7F50', '#ADD8E6'] },
-        { season: 'Summer', warmth: 'Deep', colors: ['#FF69B4', '#FFD700', '#FFA500', '#90EE90', '#FFFF00', '#FF7F50', '#87CEEB', '#ADD8E6', '#7CFC00'] },
-        { season: 'Autumn', warmth: 'Light', colors: ['#FF7F50', '#FFD700', '#FF69B4', '#FFA500', '#87CEEB', '#ADD8E6', '#FFFF00', '#90EE90', '#7CFC00'] },
-        { season: 'Autumn', warmth: 'Neutral', colors: ['#FF7F50', '#FFD700', '#87CEEB', '#FF69B4', '#FFA500', '#FFFF00', '#90EE90', '#ADD8E6', '#7CFC00'] },
-        { season: 'Autumn', warmth: 'Deep', colors: ['#FF7F50', '#FFD700', '#FFA500', '#FF69B4', '#90EE90', '#FFFF00', '#87CEEB', '#ADD8E6', '#7CFC00'] },
-        { season: 'Winter', warmth: 'Light', colors: ['#87CEEB', '#FF69B4', '#FF7F50', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#ADD8E6', '#7CFC00'] },
-        { season: 'Winter', warmth: 'Neutral', colors: ['#87CEEB', '#FF69B4', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#7CFC00', '#FF7F50', '#ADD8E6'] },
-        { season: 'Winter', warmth: 'Deep', colors: ['#87CEEB', '#FF69B4', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#7CFC00', '#FF7F50', '#ADD8E6'] }
+        { season: 'Spring', warmth: 'Light', colors: ['yellow', 'orange', 'lightgreen', 'pink', 'lightblue', 'skyblue', 'gold', 'green', 'orange-red'] },
+        { season: 'Spring', warmth: 'Neutral', colors: ['yellow', 'orange', 'lightblue', 'lightgreen', 'gold', 'pink', 'green', 'skyblue', 'orange-red'] },
+        { season: 'Spring', warmth: 'Deep', colors: ['gold', 'pink', 'orange', 'green', 'lightgreen', 'yellow', 'orange-red', 'skyblue', 'lightblue'] },
+        { season: 'Summer', warmth: 'Light', colors: ['orange', 'gold', 'pink', 'orange-red', 'lightgreen', 'yellow', 'skyblue', 'lightblue', 'green'] },
+        { season: 'Summer', warmth: 'Neutral', colors: ['orange', 'gold', 'lightgreen', 'pink', 'yellow', 'skyblue', 'green', 'orange-red', 'lightblue'] },
+        { season: 'Summer', warmth: 'Deep', colors: ['pink', 'gold', 'orange', 'lightgreen', 'yellow', 'orange-red', 'skyblue', 'lightblue', 'green'] },
+        { season: 'Autumn', warmth: 'Light', colors: ['orange-red', 'gold', 'pink', 'orange', 'skyblue', 'lightblue', 'yellow', 'lightgreen', 'green'] },
+        { season: 'Autumn', warmth: 'Neutral', colors: ['orange-red', 'gold', 'skyblue', 'pink', 'orange', 'yellow', 'lightgreen', 'lightblue', 'green'] },
+        { season: 'Autumn', warmth: 'Deep', colors: ['orange-red', 'gold', 'orange', 'pink', 'lightgreen', 'yellow', 'skyblue', 'lightblue', 'green'] },
+        { season: 'Winter', warmth: 'Light', colors: ['skyblue', 'pink', 'orange-red', 'orange', 'gold', 'lightgreen', 'yellow', 'lightblue', 'green'] },
+        { season: 'Winter', warmth: 'Neutral', colors: ['skyblue', 'pink', 'orange', 'gold', 'lightgreen', 'yellow', 'green', 'orange-red', 'lightblue'] },
+        { season: 'Winter', warmth: 'Deep', colors: ['skyblue', 'pink', 'orange', 'gold', 'lightgreen', 'yellow', 'green', 'orange-red', 'lightblue'] }
     ];
 
     const filteredColors = colorOptions.find(option => option.season === selectedSeason && option.warmth === selectedWarmth)?.colors || [];
@@ -40,7 +40,7 @@ function Create(props) {
     return (
         <div>
             <PageHeader />
-            <main>
+            <main className="page">
                 <div className="create-heading">
                     <h1>Create Your Own Palette</h1>
                 </div>
@@ -77,8 +77,7 @@ function Create(props) {
                                     {filteredColors.map((color, index) => (
                                         <div
                                             key={index}
-                                            className={`color-option ${selectedColors.includes(color) ? 'selected' : ''}`}
-                                            style={{ backgroundColor: color }}
+                                            className={`color-option ${selectedColors.includes(color) ? 'selected' : ''} ${color.toLowerCase()}`}
                                             onClick={() => handleColorSelection(color)}
                                         ></div>
                                     ))}
