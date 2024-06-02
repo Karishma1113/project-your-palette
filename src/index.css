@@ -183,7 +183,6 @@ footer > p {
 
 .explore-title {
     padding-top: 3rem;
-    margin-bottom: 2rem;
     margin: 0 auto; 
 }
 
@@ -195,10 +194,6 @@ footer > p {
     background-color: aliceblue;
 }
 
-.comments-section li {
-    font-family: "Montserrat", sans-serif;
-}
-
 .post-interaction .btn {
     margin: 0.5rem;
 }
@@ -207,50 +202,15 @@ footer > p {
     margin-right: 0.5rem;
 }
 
+.post-interaction {
+    display: flex;
+    justify-content: space-between;
+  }
+  
 .post-interaction .comment-btn {
     margin-right: 0.5rem;
 }
 
-.fake-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fake-modal-content {
-    width: 300px;
-    max-width: 90%;
-    max-height: 95vh;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-}
-
-.fake-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.fake-modal-title {
-    margin: 0;
-}
-
-.fake-modal-body {
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.fake-modal-title p {
-    font-weight: bold;
-}
 /* Profile Page Styling */
 
 .profile div.container, .create-container {
@@ -552,10 +512,6 @@ section.info > p {
         max-width: 250px;
     }
 
-    .post-interaction .btn {
-        margin: 1rem;
-    }
-
     .caption p {
         margin-top: 1rem;
     }
@@ -606,10 +562,6 @@ section.info > p {
         max-width: 300px;
     }
 
-    .post-interaction .btn {
-        margin: 1rem;
-    }
-
     .caption p {
         margin-top: 1rem;
     }
@@ -649,11 +601,7 @@ section.info > p {
     .friends-palette img {
         max-width: 400px;
     }
-
-    .post-interaction .btn {
-        margin: 1.5rem;
-    }
-
+    
     .caption p {
         margin-top: 1rem;
     }

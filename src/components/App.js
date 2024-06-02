@@ -1,14 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import QuizPage from "./QuizPage";
+import HomePage from './Homepage';
+import QuizPage from "./Quizpage";
 import SignInPage from './SignInPage';
 import ProfilePage from './ProfilePage';
 import Create from './Create';
 import CreateResults from './CreateResults';
 import ExplorePage from './ExplorePage';
-
 
 
 function App(props) {

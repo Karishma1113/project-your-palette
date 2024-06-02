@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import PageHeader from './Header';
-import PageFooter from './Footer';
-import ExploreLike from './ExploreLike';
-import ExploreComment from './ExploreComment';
-import ExploreShare from './ExploreShare';
+import React, { useState } from "react";
+import PageHeader from "./Header";
+import PageFooter from "./Footer";
+import ExploreLike from "./ExploreLike";
+import ExploreComment from "./ExploreComment";
+import ExploreShare from "./ExploreShare";
 
 const ExplorePage = () => {
     const [postData, setPostData] = useState([
@@ -13,31 +13,42 @@ const ExplorePage = () => {
             friendIcon: "img/Golden.png",
             paletteImage: "img/Friend-1.png",
             caption: "How can I improve my palette?",
-            liked: false
+            liked: false,
+            comments: [
+                { id: 1, user: "@User1", text: "Nice palette!" },
+                { id: 2, user: "@iheartcolors", text: "Maybe try adding more yellow." },
+            ],
         },
         {
             id: 2,
             friendName: "Friend 2",
             friendIcon: "img/Golden.png",
             paletteImage: "img/Friend-2.png",
-            caption: "How can I improve my palette?",
-            liked: false 
+            caption: "New palette!",
+            liked: false,
+            comments: [],
         },
         {
             id: 3,
             friendName: "Friend 3",
             friendIcon: "img/Golden.png",
             paletteImage: "img/Friend-3.png",
-            caption: "How can I improve my palette?",
-            liked: false 
+            caption: "Just took the color palette quiz!",
+            liked: false,
+            comments: [
+                { id: 1, user: "@User2", text: "Beautiful colors!" },
+            ],
         },
         {
             id: 4,
             friendName: "Friend 4",
             friendIcon: "img/Golden.png",
             paletteImage: "img/Friend-4.png",
-            caption: "How can I improve my palette?",
-            liked: false 
+            caption: "What would complement dark red hair?",
+            liked: false,
+            comments: [
+                { id: 1, user: "@rainbowluvr", text: "Maybe some brown shades?" },
+            ],
         },
     ]);
 
@@ -46,6 +57,22 @@ const ExplorePage = () => {
             return prevData.map(post => {
                 if (post.id === postId) {
                     return { ...post, liked: !post.liked }; 
+                }
+                return post;
+            });
+        });
+    };
+
+    const addComment = (postId, text) => {
+        setPostData(prevData => {
+            return prevData.map(post => {
+                if (post.id === postId) {
+                    const newComment = {
+                        id: post.comments.length + 1,
+                        user: "You",
+                        text: text
+                    };
+                    return { ...post, comments: [...post.comments, newComment] };
                 }
                 return post;
             });
@@ -77,7 +104,7 @@ const ExplorePage = () => {
                                         </div>
                                         <div className="post-interaction pb-3">
                                             <ExploreLike liked={post.liked} onClick={() => handleLike(post.id)} />
-                                            <ExploreComment />
+                                            <ExploreComment postId={post.id} comments={post.comments} addComment={addComment} />
                                             <ExploreShare />
                                         </div>
                                     </div>
