@@ -249,7 +249,7 @@ section.info > p {
 
 /* Create Page Styling */
 
- .create-heading h1 {
+.create-heading h1 {
     font-family: "Sedan", "Montserrat", sans-serif;
     text-align: center;
     margin-top: 1rem
@@ -272,18 +272,6 @@ section.info > p {
     margin-bottom: 2rem;
 }
 
-.color-img-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.color-img-container img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    margin-left: 20px;
-}
 
 .btn-color {
     width: 200px;
@@ -293,67 +281,39 @@ section.info > p {
     margin-right: 10px;
 }
 
+.season-options button,
+.warmth-options button {
+    margin-right: 10px;
+}
+
+.selected {
+    outline: 2px solid black;
+}
+
 .custom-palette {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
-.color1 {
-    background-image: url('img/color1.png');
-}
-.color2 {
-    background-image: url('img/color2.png');
-}
-.color3 {
-    background-image: url('img/color3.png');
-}
-.color4 {
-    background-image: url('img/color4.png');
-}
-.color5 {
-    background-image: url('img/color5.png');
-}
-.color6 {
-    background-image: url('img/color6.png');
-}
-.color7 {
-    background-image: url('img/color7.png');
-}
-.color8 {
-    background-image: url('img/color8.png');
-}
-.color9 {
-    background-image: url('img/color9.png');
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.color1 {
-    background-image: url('img/color1.png');
+.color-option {
+    width: 100px; 
+    height: 100px; 
+    margin: 10px; 
+    cursor: pointer;
 }
-.color2 {
-    background-image: url('img/color2.png');
+
+.color-option:hover {
+    border: 2px solid #000;
 }
-.color3 {
-    background-image: url('img/color3.png');
-}
-.color4 {
-    background-image: url('img/color4.png');
-}
-.color5 {
-    background-image: url('img/color5.png');
-}
-.color6 {
-    background-image: url('img/color6.png');
-}
-.color7 {
-    background-image: url('img/color7.png');
-}
-.color8 {
-    background-image: url('img/color8.png');
-}
-.color9 {
-    background-image: url('img/color9.png');
-}
+
 
 /* Sign-In Page Styling */
 

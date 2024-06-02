@@ -1,11 +1,45 @@
 import React, { useState } from 'react';
 import PageHeader from './Header';
 import PageFooter from './Footer';
+import CreateResults from './CreateResults';
+
 
 function Create(props) {
+    const [selectedColors, setSelectedColors] = useState([]);
+    const [selectedSeason, setSelectedSeason] = useState('');
+    const [selectedWarmth, setSelectedWarmth] = useState('');
+    const [showPalette, setShowPalette] = useState(false);
+
+    const handleColorSelection = (color) => {
+        if (selectedColors.length < 6) {
+            setSelectedColors(prevColors => [...prevColors, color]);
+        }
+    };
+
+    const handleRevealPalette = () => {
+        setShowPalette(true);
+    };
+
+    const colorOptions = [
+        { season: 'Spring', warmth: 'Light', colors: ['#FFFF00', '#FFA500', '#90EE90', '#FF69B4', '#ADD8E6', '#87CEEB', '#FFD700', '#7CFC00', '#FF7F50'] },
+        { season: 'Spring', warmth: 'Neutral', colors: ['#FFFF00', '#FFA500', '#ADD8E6', '#90EE90', '#FFD700', '#FF69B4', '#7CFC00', '#87CEEB', '#FF7F50'] },
+        { season: 'Spring', warmth: 'Deep', colors: ['#FFD700', '#FF69B4', '#FFA500', '#7CFC00', '#90EE90', '#FFFF00', '#FF7F50', '#87CEEB', '#ADD8E6'] },
+        { season: 'Summer', warmth: 'Light', colors: ['#FFA500', '#FFD700', '#FF69B4', '#FF7F50', '#90EE90', '#FFFF00', '#87CEEB', '#ADD8E6', '#7CFC00'] },
+        { season: 'Summer', warmth: 'Neutral', colors: ['#FFA500', '#FFD700', '#90EE90', '#FF69B4', '#FFFF00', '#87CEEB', '#7CFC00', '#FF7F50', '#ADD8E6'] },
+        { season: 'Summer', warmth: 'Deep', colors: ['#FF69B4', '#FFD700', '#FFA500', '#90EE90', '#FFFF00', '#FF7F50', '#87CEEB', '#ADD8E6', '#7CFC00'] },
+        { season: 'Autumn', warmth: 'Light', colors: ['#FF7F50', '#FFD700', '#FF69B4', '#FFA500', '#87CEEB', '#ADD8E6', '#FFFF00', '#90EE90', '#7CFC00'] },
+        { season: 'Autumn', warmth: 'Neutral', colors: ['#FF7F50', '#FFD700', '#87CEEB', '#FF69B4', '#FFA500', '#FFFF00', '#90EE90', '#ADD8E6', '#7CFC00'] },
+        { season: 'Autumn', warmth: 'Deep', colors: ['#FF7F50', '#FFD700', '#FFA500', '#FF69B4', '#90EE90', '#FFFF00', '#87CEEB', '#ADD8E6', '#7CFC00'] },
+        { season: 'Winter', warmth: 'Light', colors: ['#87CEEB', '#FF69B4', '#FF7F50', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#ADD8E6', '#7CFC00'] },
+        { season: 'Winter', warmth: 'Neutral', colors: ['#87CEEB', '#FF69B4', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#7CFC00', '#FF7F50', '#ADD8E6'] },
+        { season: 'Winter', warmth: 'Deep', colors: ['#87CEEB', '#FF69B4', '#FFA500', '#FFD700', '#90EE90', '#FFFF00', '#7CFC00', '#FF7F50', '#ADD8E6'] }
+    ];
+
+    const filteredColors = colorOptions.find(option => option.season === selectedSeason && option.warmth === selectedWarmth)?.colors || [];
+
     return (
         <div>
-            <PageHeader/>
+            <PageHeader />
             <main>
                 <div className="create-heading">
                     <h1>Create Your Own Palette</h1>
@@ -17,10 +51,10 @@ function Create(props) {
                             <div className="row">
                                 <h2>Choose Season:</h2>
                                 <div className="season-options">
-                                    <button className="btn btn-success season-option">Spring</button>
-                                    <button className="btn btn-info season-option">Summer</button>
-                                    <button className="btn btn-warning season-option">Autumn</button>
-                                    <button className="btn btn-primary season-option">Winter</button>
+                                    <button className={`btn btn-success season-option ${selectedSeason === 'Spring' ? 'selected' : ''}`} onClick={() => setSelectedSeason('Spring')}>Spring</button>
+                                    <button className={`btn btn-info season-option ${selectedSeason === 'Summer' ? 'selected' : ''}`} onClick={() => setSelectedSeason('Summer')}>Summer</button>
+                                    <button className={`btn btn-warning season-option ${selectedSeason === 'Autumn' ? 'selected' : ''}`} onClick={() => setSelectedSeason('Autumn')}>Autumn</button>
+                                    <button className={`btn btn-primary season-option ${selectedSeason === 'Winter' ? 'selected' : ''}`} onClick={() => setSelectedSeason('Winter')}>Winter</button>
                                 </div>
                             </div>
                         </div>
@@ -29,38 +63,37 @@ function Create(props) {
                             <div className="row">
                                 <h2>Choose Warmth:</h2>
                                 <div className="warmth-options">
-                                    <button className="btn btn-light warmth-option">Light</button>
-                                    <button className="btn btn-secondary warmth-option">Neutral</button>
-                                    <button className="btn btn-dark warmth-option">Deep</button>
+                                    <button className={`btn btn-light warmth-option ${selectedWarmth === 'Light' ? 'selected' : ''}`} onClick={() => setSelectedWarmth('Light')}>Light</button>
+                                    <button className={`btn btn-secondary warmth-option ${selectedWarmth === 'Neutral' ? 'selected' : ''}`} onClick={() => setSelectedWarmth('Neutral')}>Neutral</button>
+                                    <button className={`btn btn-dark warmth-option ${selectedWarmth === 'Deep' ? 'selected' : ''}`} onClick={() => setSelectedWarmth('Deep')}>Deep</button>
                                 </div>
                             </div>
                         </div>
                         {/* Color Choices */}
                         <div className="color-palette">
-                            <h2>Color Choices:</h2>
-                            <div className="color-choice">
-                                <div className="color-img-container">
-                                    <button type="button" className="btn btn-color color1" aria-label='color yellow'></button>
-                                    <button type="button" className="btn btn-color color2" aria-label='color orange'></button>
-                                    <button type="button" className="btn btn-color color3" aria-label='color dark green'></button>
-                                    <button type="button" className="btn btn-color color4" aria-label='color dark blue'></button>
-                                    <button type="button" className="btn btn-color color5" aria-label='color plum'></button>
-                                    <button type="button" className="btn btn-color color6" aria-label='color light green'></button>
-                                    <button type="button" className="btn btn-color color7" aria-label='color pink red'></button>
-                                    <button type="button" className="btn btn-color color8" aria-label='color light blue'></button>
-                                    <button type="button" className="btn btn-color color9" aria-label='color purple'></button>
+                            <h2>Color Choices (choose 6):</h2>
+                            <div className="color-options">
+                                <div className="color-grid">
+                                    {filteredColors.map((color, index) => (
+                                        <div
+                                            key={index}
+                                            className={`color-option ${selectedColors.includes(color) ? 'selected' : ''}`}
+                                            style={{ backgroundColor: color }}
+                                            onClick={() => handleColorSelection(color)}
+                                        ></div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <a href="create2.html" className="btn btn-outline-secondary">Reveal my Palette</a>
+                        <button className="btn btn-outline-secondary" onClick={handleRevealPalette}>Reveal my Palette</button> {/* Use onClick event */}
                     </div>
+                    {showPalette && <CreateResults selectedColors={selectedColors} />} {/* Conditionally render CreateResults component */}
                 </section>
             </main>
-            <PageFooter/>
+            <PageFooter />
         </div>
     );
 }
-
 export default Create;
