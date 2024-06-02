@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "build",
+    "site": "your-pal-ette",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
