@@ -3,7 +3,7 @@ import CreateResults from './CreateResults';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
 import { ref, push } from 'firebase/database';
-import { database } from '../index';
+import { getDatabase } from 'firebase/database';
 
 function Create(props) {
     const [selectedColors, setSelectedColors] = useState([]);
@@ -27,7 +27,7 @@ function Create(props) {
         const user = auth.currentUser;
 
         if (user) {
-            const paletteRef = ref(database, `users/${user.uid}/palettes`);
+            const paletteRef = ref(getDatabase, `users/${user.uid}/palettes`);
             push(paletteRef, selectedColors)
               .then(() => {
                   console.log('Palette saved successfully');
