@@ -344,39 +344,39 @@ section.info > p {
 }
 
 .color-option.yellow {
-    background-color: #FFFF00;
+    background-color:yellow;
 }
 
 .color-option.orange {
-    background-color: #FFA500;
+    background-color: orange;
 }
 
 .color-option.lightgreen {
-    background-color: #90EE90;
+    background-color: lightgreen;
 }
 
 .color-option.pink {
-    background-color: #FF69B4;
+    background-color: pink;
 }
 
 .color-option.lightblue {
-    background-color: #ADD8E6;
+    background-color: lightblue;
 }
 
 .color-option.skyblue {
-    background-color: #87CEEB;
+    background-color: skyblue;
 }
 
 .color-option.gold {
-    background-color: #FFD700;
+    background-color: gold;
 }
 
 .color-option.green {
-    background-color: #7CFC00;
+    background-color: green;
 }
 
 .color-option.orangered {
-    background-color: #FF7F50;
+    background-color: orangered;
 }
 
 .color-option:hover {
