@@ -17,7 +17,7 @@ const ExplorePage = () => {
       id: 1,
       friendName: "Friend 1",
       friendIcon: "img/Golden.png",
-      paletteImage: "img/Friend-1.png",
+      paletteImage: "img/kawaii.png",
       caption: "How can I improve my palette?",
       liked: false,
       comments: [],
@@ -26,7 +26,7 @@ const ExplorePage = () => {
       id: 2,
       friendName: "Friend 2",
       friendIcon: "img/Golden.png",
-      paletteImage: "img/Friend-2.png",
+      paletteImage: "img/Cappuccino.png",
       caption: "New palette!",
       liked: false,
       comments: [],
@@ -35,7 +35,7 @@ const ExplorePage = () => {
       id: 3,
       friendName: "Friend 3",
       friendIcon: "img/Golden.png",
-      paletteImage: "img/Friend-3.png",
+      paletteImage: "img/rainbow.png",
       caption: "Just took the color palette quiz!",
       liked: false,
       comments: [],
@@ -44,7 +44,7 @@ const ExplorePage = () => {
       id: 4,
       friendName: "Friend 4",
       friendIcon: "img/Golden.png",
-      paletteImage: "img/Friend-4.png",
+      paletteImage: "img/Beach.png",
       caption: "What would complement dark red hair?",
       liked: false,
       comments: [],
@@ -59,15 +59,36 @@ const ExplorePage = () => {
   const currentUser = auth.currentUser;
 
   const handleLike = (postId) => {
+    if (!currentUser) {
+      return;
+    }
+    const userId = currentUser.uid;
+  
     setPostData((prevData) => {
       return prevData.map((post) => {
         if (post.id === postId) {
-          return { ...post, liked: !post.liked };
+          const updatedPost = { ...post, liked: !post.liked };
+  
+          // updates liked status in Firebase
+          const likeRef = ref(db, `users/${userId}/likedPosts/${postId}`);
+          if (updatedPost.liked) {
+            firebaseSet(likeRef, {
+              friendName: post.friendName,
+              friendIcon: post.friendIcon,
+              paletteImage: post.paletteImage,
+              caption: post.caption,
+            });
+          } else {
+            firebaseSet(likeRef, null); 
+          }
+  
+          return updatedPost;
         }
         return post;
       });
     });
   };
+  
 
   const addComment = (postId, text) => {
     if (!currentUser) {
@@ -97,7 +118,8 @@ const ExplorePage = () => {
 
     setPostData(updatedPostData);
   };
-
+ 
+  // fetching comments from firebase
   useEffect(() => {
     const fetchData = () => {
       if (currentUser) {
