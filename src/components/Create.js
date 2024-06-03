@@ -12,10 +12,16 @@ function Create(props) {
     const navigate = useNavigate(); 
 
     const handleColorSelection = (color) => {
-        if (selectedColors.length < 6) {
-            setSelectedColors(prevColors => [...prevColors, color]);
-        }
+        setSelectedColors(prevColors => {
+            if (prevColors.includes(color)) {
+                return prevColors.filter(c => c !== color);
+            } else if (prevColors.length < 6) {
+                return [...prevColors, color];
+            }
+            return prevColors;
+        });
     };
+
 
     const handleRevealPalette = () => {
         setShowPalette(true);
