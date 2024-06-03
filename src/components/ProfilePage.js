@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
-function ProfilePage() {
+function ProfilePage(props) {
     const palettesData = [
         { title: "Kawaii", imgSrc: "img/kawaii.png" },
         { title: "Cappuccino", imgSrc: "img/Cappuccino.png" },
@@ -35,23 +35,26 @@ function ProfilePage() {
                 <div className="container">
                     <div className="profile-info">
                         <section className="profile-name">
-                            <h1>The Dub</h1>
+                            <h1>{props.currentUser?.userName}</h1>
                         </section>
                         <section className="picture">
-                            <img src="img/husky.png" alt="Profile picture of a husky" />
+                            <img src="img/husky.png" alt="Profile of a husky" />
                         </section>
                         <section className="info">
                             <p>Viewer: 999</p>
                             <p>Friends: 4</p>
                         </section>
-                        <section className="saved-palettes">
-                            <h2>Saved Palettes:</h2>
-                        </section>
                     </div>
+                    <section className="saved-palettes">
+                        <h2>Saved Palettes:</h2>
+                    </section>
                     <section className="palettes">
                         <div className="row">
                             {paletteElements}
                         </div>
+                    </section>
+                    <section className="created-palettes">
+                        <h2>Created Palettes:</h2>
                     </section>
                 </div>
             </main>

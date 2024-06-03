@@ -1,11 +1,15 @@
 import React from 'react';
+import { getAuth, signOut } from 'firebase/auth';
 
 function PageHeader(props) {
+    const handleSignOut = (event) => {
+        signOut(getAuth());
+    }
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand-link" href="/homepage">
+                    <a className="navbar-brand-link" href="/">
                         <img src="img/palette_logo_without_bg.png" className="logo" alt="Your Pal-ette Logo" />
                         Your Pal-ette
                     </a>
@@ -24,9 +28,13 @@ function PageHeader(props) {
                                 <a className="nav-link active" href="/explore">Explore</a>
                             </li>
                             <li className="nav-item px-4">
-                                <a className="nav-link active" href="/signin">Profile</a>
+                                <a className="nav-link active" href="/profile">Profile</a>
                             </li>
                         </ul>
+                    </div>
+                    <div className='authorization'>
+                        <button type="submit" className="btn btn-primary" ><a href="/signin" className="signin">Sign In</a></button>
+                        <button type="submit" className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
                     </div>
                 </div>
             </nav>

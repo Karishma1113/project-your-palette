@@ -5,8 +5,13 @@ import PageHeader from "./Header";
 import PageFooter from "./Footer";
 
 function SignInPage(props) {
+    const currentUser = props.currentUser;
     const navigate = useNavigate();
     const auth = getAuth();
+
+    if(currentUser.userName) {
+        return navigate("/")
+      } 
 
     const firebaseUIConfig = {
         signInOptions: [
