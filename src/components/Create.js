@@ -82,8 +82,8 @@ function Create(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-center">
-                        <button className="btn btn-outline-secondary" onClick={handleRevealPalette}>Reveal my Palette</button>
+                    <div className="d-flex justify-content-center my-3">
+                        <button className="btn btn-outline-secondary mb-3" onClick={handleRevealPalette}>Reveal my Palette</button>
                     </div>
                     {console.log("Show Palette:", showPalette)}
                     {showPalette && <CreateResults selectedColors={selectedColors} />}

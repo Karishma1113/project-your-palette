@@ -264,7 +264,7 @@ section.info > p {
 /* Create Page Styling */
 
 .page {
-    height: 1000px;
+    height: 100%;
 }
 
 .create-heading h1 {
@@ -325,6 +325,17 @@ section.info > p {
     height: 100px; 
     margin: 10px; 
     cursor: pointer;
+}
+
+.color-selected-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.color-selected {
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem 1rem 1rem;
 }
 
 .color-option.yellow {
