@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import CreateResults from './CreateResults';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { ref, set } from 'firebase/database';
-import { database } from './firebase';
+import { ref, push } from 'firebase/database';
+import { database } from '../index';
 
 function Create(props) {
     const [selectedColors, setSelectedColors] = useState([]);
     const [selectedSeason, setSelectedSeason] = useState('');
     const [selectedWarmth, setSelectedWarmth] = useState('');
     const [showPalette, setShowPalette] = useState(false);
-    const navigate = useNavigate(); // Use navigate hook for redirection
+    const navigate = useNavigate(); 
 
     const handleColorSelection = (color) => {
         if (selectedColors.length < 6) {
@@ -24,14 +23,12 @@ function Create(props) {
     };
 
     const savePalette = () => {
-
         const auth = getAuth();
         const user = auth.currentUser;
 
-
         if (user) {
             const paletteRef = ref(database, `users/${user.uid}/palettes`);
-            set(paletteRef, selectedColors)
+            push(paletteRef, selectedColors)
               .then(() => {
                   console.log('Palette saved successfully');
                   navigate('/profile'); 
