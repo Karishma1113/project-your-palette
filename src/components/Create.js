@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import CreateResults from './CreateResults';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
-import { ref, push } from 'firebase/database';
-import { getDatabase } from 'firebase/database';
+import { getDatabase, ref, set } from 'firebase/database';
 
 function Create(props) {
     const [selectedColors, setSelectedColors] = useState([]);
@@ -25,10 +24,11 @@ function Create(props) {
     const savePalette = () => {
         const auth = getAuth();
         const user = auth.currentUser;
-
+    
         if (user) {
-            const paletteRef = ref(getDatabase, `users/${user.uid}/palettes`);
-            push(paletteRef, selectedColors)
+            const db = getDatabase();
+            const paletteRef = ref(db, `users/${user.uid}/createdPalettes`);
+            set(paletteRef, selectedColors)
               .then(() => {
                   console.log('Palette saved successfully');
                   navigate('/profile'); 
@@ -107,8 +107,8 @@ function Create(props) {
                     </div>
                     <div className="d-flex justify-content-center my-3">
                         <button className="btn btn-outline-secondary mb-3" onClick={handleRevealPalette}>Reveal my Palette</button>
+                        <button className="btn btn-outline-secondary mb-3" onClick={savePalette}>Save Palette</button>
                     </div>
-                    {console.log("Show Palette:", showPalette)}
                     {showPalette && <CreateResults selectedColors={selectedColors} />}
                 </section>
             </main>
