@@ -11,7 +11,7 @@ function CreateResults({ selectedColors }) {
                         <div
                             key={index}
                             className="color-selected"
-                            style={{ backgroundColor: color.toLowerCase() }}
+                            style={{ backgroundColor: color }}
                         ></div>
                     ))
                 ) : (
