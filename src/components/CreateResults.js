@@ -1,6 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// function CreateResults({ selectedColors }) {
+//     return (
+//         <div className="create-results">
+//             <h2 className="text-center py-3 m-0">Your Color Palette:</h2>
+//             <div className="color-palette color-selected-parent">
+//                 {selectedColors.length > 0 ? (
+//                     selectedColors.map((color, index) => (
+//                         <div
+//                             key={index}
+//                             className="color-selected"
+//                             style={{ backgroundColor: color }}
+//                         ></div>
+//                     ))
+//                 ) : (
+//                     <p className="text-center">No colors selected yet.</p>
+//                 )}
+//             </div>
+//         </div>
+//     );
+// }
+
 function CreateResults({ selectedColors }) {
     return (
         <div className="create-results">
@@ -10,8 +31,7 @@ function CreateResults({ selectedColors }) {
                     selectedColors.map((color, index) => (
                         <div
                             key={index}
-                            className="color-selected"
-                            style={{ backgroundColor: color }}
+                            className={`color-selected ${color.toLowerCase()}`}
                         ></div>
                     ))
                 ) : (
