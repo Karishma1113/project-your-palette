@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import CreateResults from './CreateResults';
-
+import { useNavigate } from 'react-router-dom';
+import { getAuth } from "firebase/auth";
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { ref, set } from 'firebase/database';
+import { database } from './firebase';
 
 function Create(props) {
     const [selectedColors, setSelectedColors] = useState([]);
     const [selectedSeason, setSelectedSeason] = useState('');
     const [selectedWarmth, setSelectedWarmth] = useState('');
     const [showPalette, setShowPalette] = useState(false);
+    const navigate = useNavigate(); // Use navigate hook for redirection
 
     const handleColorSelection = (color) => {
         if (selectedColors.length < 6) {
@@ -16,6 +21,27 @@ function Create(props) {
 
     const handleRevealPalette = () => {
         setShowPalette(true);
+    };
+
+    const savePalette = () => {
+
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+
+        if (user) {
+            const paletteRef = ref(database, `users/${user.uid}/palettes`);
+            set(paletteRef, selectedColors)
+              .then(() => {
+                  console.log('Palette saved successfully');
+                  navigate('/profile'); 
+              })
+              .catch(error => {
+                  console.error('Error saving palette:', error);
+              });
+        } else {
+            console.error('User is not authenticated');
+        }
     };
 
     const colorOptions = [
