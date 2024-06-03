@@ -11,7 +11,7 @@ function CreateResults({ selectedColors }) {
                         <div
                             key={index}
                             className="color-selected"
-                            style={{ backgroundColor: color, height: '20px', width: '20px', display: 'inline-block' }}
+                            style={{ backgroundColor: color.toLowerCase() }}
                         ></div>
                     ))
                 ) : (
@@ -21,6 +21,7 @@ function CreateResults({ selectedColors }) {
         </div>
     );
 }
+
 
 CreateResults.propTypes = {
     selectedColors: PropTypes.arrayOf(PropTypes.string)

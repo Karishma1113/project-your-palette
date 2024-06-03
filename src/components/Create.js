@@ -48,18 +48,18 @@ function Create(props) {
     };
 
     const colorOptions = [
-        { season: 'Spring', warmth: 'Light', colors: ['yellow', 'orange', 'lightgreen', 'pink', 'lightblue', 'skyblue', 'gold', 'green', 'orange-red'] },
-        { season: 'Spring', warmth: 'Neutral', colors: ['yellow', 'orange', 'lightblue', 'lightgreen', 'gold', 'pink', 'green', 'skyblue', 'orange-red'] },
-        { season: 'Spring', warmth: 'Deep', colors: ['gold', 'pink', 'orange', 'green', 'lightgreen', 'yellow', 'orange-red', 'skyblue', 'lightblue'] },
-        { season: 'Summer', warmth: 'Light', colors: ['orange', 'gold', 'pink', 'orange-red', 'lightgreen', 'yellow', 'skyblue', 'lightblue', 'green'] },
-        { season: 'Summer', warmth: 'Neutral', colors: ['orange', 'gold', 'lightgreen', 'pink', 'yellow', 'skyblue', 'green', 'orange-red', 'lightblue'] },
-        { season: 'Summer', warmth: 'Deep', colors: ['pink', 'gold', 'orange', 'lightgreen', 'yellow', 'orange-red', 'skyblue', 'lightblue', 'green'] },
-        { season: 'Autumn', warmth: 'Light', colors: ['orange-red', 'gold', 'pink', 'orange', 'skyblue', 'lightblue', 'yellow', 'lightgreen', 'green'] },
-        { season: 'Autumn', warmth: 'Neutral', colors: ['orange-red', 'gold', 'skyblue', 'pink', 'orange', 'yellow', 'lightgreen', 'lightblue', 'green'] },
-        { season: 'Autumn', warmth: 'Deep', colors: ['orange-red', 'gold', 'orange', 'pink', 'lightgreen', 'yellow', 'skyblue', 'lightblue', 'green'] },
-        { season: 'Winter', warmth: 'Light', colors: ['skyblue', 'pink', 'orange-red', 'orange', 'gold', 'lightgreen', 'yellow', 'lightblue', 'green'] },
-        { season: 'Winter', warmth: 'Neutral', colors: ['skyblue', 'pink', 'orange', 'gold', 'lightgreen', 'yellow', 'green', 'orange-red', 'lightblue'] },
-        { season: 'Winter', warmth: 'Deep', colors: ['skyblue', 'pink', 'orange', 'gold', 'lightgreen', 'yellow', 'green', 'orange-red', 'lightblue'] }
+        { season: 'Spring', warmth: 'Light', colors: ['Yellow', 'Orange', 'LightGreen', 'Pink', 'LightBlue', 'SkyBlue', 'Gold', 'Green', 'OrangeRed'] },
+        { season: 'Spring', warmth: 'Neutral', colors: ['Yellow', 'Orange', 'LightBlue', 'LightGreen', 'Gold', 'Pink', 'Green', 'SkyBlue', 'OrangeRed'] },
+        { season: 'Spring', warmth: 'Deep', colors: ['Gold', 'Pink', 'Orange', 'Green', 'LightGreen', 'Yellow', 'OrangeRed', 'SkyBlue', 'LightBlue'] },
+        { season: 'Summer', warmth: 'Light', colors: ['Orange', 'Gold', 'Pink', 'OrangeRed', 'LightGreen', 'Yellow', 'SkyBlue', 'LightBlue', 'Green'] },
+        { season: 'Summer', warmth: 'Neutral', colors: ['Orange', 'Gold', 'LightGreen', 'Pink', 'Yellow', 'SkyBlue', 'Green', 'OrangeRed', 'LightBlue'] },
+        { season: 'Summer', warmth: 'Deep', colors: ['Pink', 'Gold', 'Orange', 'LightGreen', 'Yellow', 'OrangeRed', 'SkyBlue', 'LightBlue', 'Green'] },
+        { season: 'Autumn', warmth: 'Light', colors: ['OrangeRed', 'Gold', 'Pink', 'Orange', 'SkyBlue', 'LightBlue', 'Yellow', 'LightGreen', 'Green'] },
+        { season: 'Autumn', warmth: 'Neutral', colors: ['OrangeRed', 'Gold', 'SkyBlue', 'Pink', 'Orange', 'Yellow', 'LightGreen', 'LightBlue', 'Green'] },
+        { season: 'Autumn', warmth: 'Deep', colors: ['OrangeRed', 'Gold', 'Orange', 'Pink', 'LightGreen', 'Yellow', 'SkyBlue', 'LightBlue', 'Green'] },
+        { season: 'Winter', warmth: 'Light', colors: ['SkyBlue', 'Pink', 'OrangeRed', 'Orange', 'Gold', 'LightGreen', 'Yellow', 'LightBlue', 'Green'] },
+        { season: 'Winter', warmth: 'Neutral', colors: ['SkyBlue', 'Pink', 'Orange', 'Gold', 'LightGreen', 'Yellow', 'Green', 'OrangeRed', 'LightBlue'] },
+        { season: 'Winter', warmth: 'Deep', colors: ['SkyBlue', 'Pink', 'Orange', 'Gold', 'LightGreen', 'Yellow', 'Green', 'OrangeRed', 'LightBlue'] }
     ];
 
     const filteredColors = colorOptions.find(option => option.season === selectedSeason && option.warmth === selectedWarmth)?.colors || [];
