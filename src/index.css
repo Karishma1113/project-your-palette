@@ -142,15 +142,19 @@ footer > p {
 
 /* Explore Page Styling */
 
+.explore-background, .sign-in-page {
+    height: 100%;
+}
+
+
 .all-palettes p {
     font-family: "Montserrat", sans-serif;
 }
 
 .palette-card {
-    margin-top: 5rem;
     background-color: white;
     width: calc(100% - 40px);
-    margin: 0 auto 20px auto;
+    margin: 0 auto 50px auto;
     padding: 80px 10px 10px 10px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -166,6 +170,10 @@ footer > p {
     left: 10px;
     display: flex;
     align-items: center;
+}
+
+.sign-in-prompt {
+    font-family: "Montserrat", sans-serif;
 }
 
 .friend-icon {
@@ -188,6 +196,7 @@ footer > p {
 
 .explore-title {
     padding-top: 3rem;
+    padding-bottom: 2rem;
     margin: 0 auto; 
 }
 
@@ -255,7 +264,7 @@ section.info > p {
 /* Create Page Styling */
 
 .page {
-    height: 1000px;
+    height: 100%;
 }
 
 .create-heading h1 {
@@ -316,6 +325,17 @@ section.info > p {
     height: 100px; 
     margin: 10px; 
     cursor: pointer;
+}
+
+.color-selected-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.color-selected {
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem 1rem 1rem;
 }
 
 .color-option.yellow {
@@ -532,10 +552,6 @@ section.info > p {
 
     .palette-card {
         max-width: 40%;
-    }
-
-    .explore-title {
-        margin-bottom: 3rem;
     }
 
     .friends-palette img {

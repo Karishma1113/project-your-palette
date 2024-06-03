@@ -27,7 +27,7 @@ function SignInPage(props) {
 
     return (
         <div>
-            <main>
+            <main class="sign-in-page">
                 <StyledFirebaseAuth firebaseAuth={auth} uiConfig={firebaseUIConfig}/>
             </main>
         </div>
