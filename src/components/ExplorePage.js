@@ -9,10 +9,48 @@ import {
   onValue,
 } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import { Link } from "react-router-dom"; // Import Link for routing
+import { Link } from "react-router-dom";
 
 const ExplorePage = () => {
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState([
+    {
+      id: 1,
+      friendName: "Friend 1",
+      friendIcon: "img/Golden.png",
+      paletteImage: "img/Friend-1.png",
+      caption: "How can I improve my palette?",
+      liked: false,
+      comments: [],
+    },
+    {
+      id: 2,
+      friendName: "Friend 2",
+      friendIcon: "img/Golden.png",
+      paletteImage: "img/Friend-2.png",
+      caption: "New palette!",
+      liked: false,
+      comments: [],
+    },
+    {
+      id: 3,
+      friendName: "Friend 3",
+      friendIcon: "img/Golden.png",
+      paletteImage: "img/Friend-3.png",
+      caption: "Just took the color palette quiz!",
+      liked: false,
+      comments: [],
+    },
+    {
+      id: 4,
+      friendName: "Friend 4",
+      friendIcon: "img/Golden.png",
+      paletteImage: "img/Friend-4.png",
+      caption: "What would complement dark red hair?",
+      liked: false,
+      comments: [],
+    },
+  ]);
+
   const [userSignedIn, setUserSignedIn] = useState(false);
 
   const db = getDatabase();
@@ -80,15 +118,11 @@ const ExplorePage = () => {
         });
       } else {
         setUserSignedIn(false);
-        setPostData([]); // Clear post data when user is signed out
+        setPostData([]);
       }
     };
 
     fetchData();
-
-    return () => {
-      // Clean up
-    };
   }, [db, postData, currentUser]);
 
   return (
@@ -146,12 +180,13 @@ const ExplorePage = () => {
         )}
         {!userSignedIn && (
           <div className="sign-in-prompt text-center mt-3">
-          <p>
-            <span>
-            <Link to="/signin">Sign in here</Link> to see and interact with posts
-            </span>
-          </p>
-        </div>
+            <p>
+              <span>
+                <Link to="/signin">Sign in here</Link> to see and interact
+                with posts
+              </span>
+            </p>
+          </div>
         )}
       </main>
     </body>

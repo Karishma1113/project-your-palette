@@ -197,6 +197,7 @@ footer > p {
 
 .explore-title {
     padding-top: 3rem;
+    padding-bottom: 2rem;
     margin: 0 auto; 
 }
 
@@ -541,10 +542,6 @@ section.info > p {
 
     .palette-card {
         max-width: 40%;
-    }
-
-    .explore-title {
-        margin-bottom: 3rem;
     }
 
     .friends-palette img {

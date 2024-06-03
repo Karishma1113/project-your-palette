@@ -18,7 +18,7 @@ function ProfilePage(props) {
                         </div>
                         <div className="col-sm">
                             <h2 className="card-title">{palette.title}</h2>
-                            <button className="btn btn-info">Unsave</button>
+                            <button className="btn btn-info">Unlike</button>
                         </div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@ function ProfilePage(props) {
                             <p>Friends: 4</p>
                         </section>
                     </div>
-                    <section className="saved-palettes">
-                        <h2>Saved Palettes:</h2>
+                    <section className="liked-palettes">
+                        <h2>Liked Palettes:</h2>
                     </section>
                     <section className="palettes">
                         <div className="row">
