@@ -93,7 +93,7 @@ function QuizPage() {
         }));
     };
 
-     const isFormComplete = () => {
+    const isFormComplete = () => {
         return questions.every(question => quizResults.hasOwnProperty(question.name));
     };
 
@@ -111,6 +111,18 @@ function QuizPage() {
         setIsSubmitted(false);
     };
 
+    const renderQuestions = () => {
+        return questions.map((q, index) => (
+            <QuizQuestion
+                key={index}
+                question={q.question}
+                name={q.name}
+                options={q.options}
+                onChange={handleInputChange}
+            />
+        ));
+    };
+
     return (
         <div>
             <main className="quiz-page">
@@ -121,12 +133,14 @@ function QuizPage() {
                 {!isSubmitted ? (
                     <form onSubmit={handleSubmit}>
                         <section className="quiz-container">
-                            {questions.map((q, index) => (
-                                <QuizQuestion key={index} question={q.question} name={q.name} options={q.options} onChange={handleInputChange} />
-                            ))}
+                            {renderQuestions()}
                         </section>
                         <div className="d-flex justify-content-center">
-                            <button className="btn submit-button" type="submit" disabled={!isFormComplete()}>
+                            <button
+                                className="btn submit-button"
+                                type="submit"
+                                disabled={!isFormComplete()}
+                            >
                                 Reveal My Colors!
                             </button>
                         </div>
@@ -135,7 +149,11 @@ function QuizPage() {
                     <div className="results-container">
                         <QuizResults results={quizResults} />
                         <div className="d-flex justify-content-center">
-                            <button className="btn submit-button" onClick={handleRetakeQuiz} aria-label="Retake Quiz">
+                            <button
+                                className="btn submit-button"
+                                onClick={handleRetakeQuiz}
+                                aria-label="Retake Quiz"
+                            >
                                 Retake Quiz
                             </button>
                         </div>

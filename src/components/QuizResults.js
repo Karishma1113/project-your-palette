@@ -52,14 +52,17 @@ function QuizResults(props) {
 
     const seasonImages = getSeasonImages(season);
 
+    const renderSeasonImages = () => {
+        return seasonImages.map((image, index) => (
+            <img key={index} src={image} alt={`${season} color palette`} />
+        ));
+    };
 
     return (
         <div className="quiz-results">
             <h2>Your Color Season: {season.charAt(0).toUpperCase() + season.slice(1)}</h2>
             <div className="season-images">
-                {seasonImages.map((image, index) => (
-                    <img key={index} src={image} alt={`${season} color palette`} />
-                ))}
+                {renderSeasonImages()}
             </div>
         </div>
     );
