@@ -4,6 +4,7 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 
 function ProfilePage(props) {
     const [createdPalettes, setCreatedPalettes] = useState([]);
+    const [season, setSeason] = useState(null);
 
     useEffect(() => {
         const auth = getAuth();
@@ -20,9 +21,20 @@ function ProfilePage(props) {
                     setCreatedPalettes(palettes);
                 }
             });
+
+            const seasonRef = ref(db, `users/${user.uid}/season`);
+            onValue(seasonRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    setSeason(data);
+                }
+            });
         }
     }, []);
 
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
 
     const palettesData = [
         { title: "Kawaii", imgSrc: "img/kawaii.png" },
@@ -64,9 +76,13 @@ function ProfilePage(props) {
                             <p>Viewer: 999</p>
                             <p>Friends: 4</p>
                         </section>
+                        <section>
+                            <h2 className="h2">Your Personalized Season:</h2>
+                            {season ? (<p className="quiz-season-reveal">{capitalizeFirstLetter(season)}</p>) : (<p>Take our quiz to find your season!</p>)}
+                        </section>
                     </div>
                     <section className="liked-palettes">
-                        <h2>Liked Palettes:</h2>
+                        <h2 className="h2">Liked Palettes:</h2>
                     </section>
                     <section className="palettes">
                         <div className="row">

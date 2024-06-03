@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import QuizQuestion from './QuizQuestion';
 import QuizResults from './QuizResults';
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
 function QuizPage() {
     const questions = [
@@ -115,7 +117,7 @@ function QuizPage() {
         return Object.keys(seasonCounts).reduce((a, b) => seasonCounts[a] > seasonCounts[b] ? a : b);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (isFormComplete()) {
             const season = calculateSeason(quizResults);
@@ -124,6 +126,20 @@ function QuizPage() {
                 season,
             }));
             setIsSubmitted(true);
+
+            const auth = getAuth();
+            const user = auth.currentUser;
+            if (user) {
+                try {
+                    const db = getDatabase();
+                    const userRef = ref(db, `users/${user.uid}/season`);
+                    await firebaseSet(userRef, season);
+                } catch (error) {
+                    console.error('Error saving quiz result:', error);
+                }
+            } else {
+                alert('You must be logged in to save your quiz results.');
+            }
         } else {
             alert("Please answer all questions before submitting the quiz.");
         }
