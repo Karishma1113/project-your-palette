@@ -8,76 +8,76 @@ function QuizPage() {
             question: 'What is your skin tone? (Fitzpatrick Scale)',
             name: 'skin_tone',
             options: [
-                { value: 'winter', label: 'Light, Pale White' },
-                { value: 'spring', label: 'White, Fair' },
-                { value: 'summer', label: 'Medium, White to Olive' },
-                { value: 'autumn', label: 'Olive, Moderate Brown' },
-                { value: 'autumn', label: 'Brown, Dark Brown' },
-                { value: 'winter', label: 'Black, Very Dark' },
+                { value: 'Light, Pale White', season: 'winter' },
+                { value: 'White, Fair', season: 'spring' },
+                { value: 'Medium, White to Olive', season: 'summer' },
+                { value: 'Olive, Moderate Brown', season: 'autumn' },
+                { value: 'Brown, Dark Brown', season: 'autumn' },
+                { value: 'Black, Very Dark', season: 'winter' },
             ],
         },
         {
             question: 'What is your hair color? (Natural Hair Color)',
             name: 'hair_color',
             options: [
-                { value: 'winter', label: 'Black Hair' },
-                { value: 'autumn', label: 'Brown Hair' },
-                { value: 'spring', label: 'Blonde Hair' },
-                { value: 'autumn', label: 'Red Hair' },
-                { value: 'summer', label: 'Grey/Silver Hair' },
-                { value: 'spring', label: 'Other Color Hair' },
+                { value: 'Black Hair', season: 'winter' },
+                { value: 'Brown Hair', season: 'autumn' },
+                { value: 'Blonde Hair', season: 'spring' },
+                { value: 'Red Hair', season: 'autumn' },
+                { value: 'Grey/Silver Hair', season: 'summer' },
+                { value: 'Other Color Hair', season: 'spring' },
             ],
         },
         {
             question: 'What is your eye color?',
             name: 'eye_color',
             options: [
-                { value: 'summer', label: 'Blue Eyes' },
-                { value: 'spring', label: 'Green Eyes' },
-                { value: 'autumn', label: 'Hazel Eyes' },
-                { value: 'winter', label: 'Brown Eyes' },
-                { value: 'winter', label: 'Very Dark/Black Eyes' },
-                { value: 'spring', label: 'Other' },
+                { value: 'Blue Eyes', season: 'summer' },
+                { value: 'Green Eyes', season: 'spring' },
+                { value: 'Hazel Eyes', season: 'autumn' },
+                { value: 'Brown Eyes', season: 'winter' },
+                { value: 'Very Dark/Black Eyes', season: 'winter' },
+                { value: 'Other', season: 'spring' },
             ],
         },
         {
             question: 'How would you describe your skin undertone?',
             name: 'undertone',
             options: [
-                { value: 'winter', label: 'Cool Undertones (Blue or Purple veins)' },
-                { value: 'spring', label: 'Neutral Undertones (Blue-Green veins)' },
-                { value: 'autumn', label: 'Warm Undertones (Green or Olive veins)' },
+                { value: 'Cool Undertones (Blue or Purple veins)', season: 'winter' },
+                { value: 'Neutral Undertones (Blue-Green veins)', season: 'spring' },
+                { value: 'Warm Undertones (Green or Olive veins)', season: 'autumn' },
             ],
         },
         {
             question: 'Which of these colors do you feel most comfortable wearing?',
             name: 'comfy_color',
             options: [
-                { value: 'winter', label: 'Neutrals (black, white, gray...)' },
-                { value: 'spring', label: 'Vibrant (red, blue, green...)' },
-                { value: 'summer', label: 'Soft pastels (pink, lavender, baby blue...)' },
-                { value: 'autumn', label: 'Earthy tones (brown, olive, camel...)' },
-                { value: 'winter', label: 'Subdued tones (mauve, sage, slate...)' },
-                { value: 'spring', label: 'Metallic tones (gold, silver, bronze...)' },
+                { value: 'Neutrals (black, white, gray...)', season: 'winter' },
+                { value: 'Vibrant (red, blue, green...)', season: 'spring' },
+                { value: 'Soft pastels (pink, lavender, baby blue...)', season: 'summer' },
+                { value: 'Earthy tones (brown, olive, camel...)', season: 'autumn' },
+                { value: 'Subdued tones (mauve, sage, slate...)', season: 'winter' },
+                { value: 'Metallic tones (gold, silver, bronze...)', season: 'spring' },
             ],
         },
         {
             question: 'Which season do you feel best represents your personality?',
             name: 'season',
             options: [
-                { value: 'winter', label: 'Winter (cool tones)' },
-                { value: 'spring', label: 'Spring (light and bright)' },
-                { value: 'summer', label: 'Summer (soft and muted)' },
-                { value: 'autumn', label: 'Autumn (rich and earthy)' },
+                { value: 'Winter (cool tones)', season: 'winter' },
+                { value: 'Spring (light and bright)', season: 'spring' },
+                { value: 'Summer (soft and muted)', season: 'summer' },
+                { value: 'Autumn (rich and earthy)', season: 'autumn' },
             ],
         },
         {
             question: 'What\'s your preferred metal for jewelry?',
             name: 'metals',
             options: [
-                { value: 'spring', label: 'Gold' },
-                { value: 'winter', label: 'Silver' },
-                { value: 'autumn', label: 'No Preference' },
+                { value: 'Gold', season: 'spring' },
+                { value: 'Silver', season: 'winter' },
+                { value: 'No Preference', season: 'autumn' },
             ],
         },
     ];
@@ -97,9 +97,32 @@ function QuizPage() {
         return questions.every(question => quizResults.hasOwnProperty(question.name));
     };
 
+    const calculateSeason = (results) => {
+        const seasonCounts = {
+            winter: 0,
+            spring: 0,
+            summer: 0,
+            autumn: 0,
+        };
+
+        questions.forEach((question) => {
+            const selectedOption = question.options.find(option => option.value === results[question.name]);
+            if (selectedOption) {
+                seasonCounts[selectedOption.season]++;
+            }
+        });
+
+        return Object.keys(seasonCounts).reduce((a, b) => seasonCounts[a] > seasonCounts[b] ? a : b);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isFormComplete()) {
+            const season = calculateSeason(quizResults);
+            setQuizResults((prevResults) => ({
+                ...prevResults,
+                season,
+            }));
             setIsSubmitted(true);
         } else {
             alert("Please answer all questions before submitting the quiz.");
@@ -117,7 +140,7 @@ function QuizPage() {
                 key={index}
                 question={q.question}
                 name={q.name}
-                options={q.options}
+                options={q.options.map(option => ({ value: option.value, label: option.value }))}
                 onChange={handleInputChange}
             />
         ));

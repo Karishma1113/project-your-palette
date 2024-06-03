@@ -3,26 +3,7 @@ import React from 'react';
 function QuizResults(props) {
     const { results } = props;
 
-    const calculateSeason = (results) => {
-        const seasonCounts = {
-            winter: 0,
-            spring: 0,
-            summer: 0,
-            autumn: 0,
-        };
-
-        Object.values(results).forEach(value => {
-            if (seasonCounts.hasOwnProperty(value)) {
-                seasonCounts[value]++;
-            }
-        });
-
-        const maxSeason = Object.keys(seasonCounts).reduce((a, b) => seasonCounts[a] > seasonCounts[b] ? a : b);
-
-        return maxSeason;
-    };
-
-    const season = calculateSeason(results);
+    const season = results.season;
 
     const getSeasonImages = (season) => {
         const seasonImages = {
@@ -52,17 +33,13 @@ function QuizResults(props) {
 
     const seasonImages = getSeasonImages(season);
 
-    const renderSeasonImages = () => {
-        return seasonImages.map((image, index) => (
-            <img key={index} src={image} alt={`${season} color palette`} />
-        ));
-    };
-
     return (
         <div className="quiz-results">
             <h2>Your Color Season: {season.charAt(0).toUpperCase() + season.slice(1)}</h2>
             <div className="season-images">
-                {renderSeasonImages()}
+                {seasonImages.map((image, index) => (
+                    <img key={index} src={image} alt={`${season} color palette`} />
+                ))}
             </div>
         </div>
     );
