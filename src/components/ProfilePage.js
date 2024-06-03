@@ -1,6 +1,4 @@
 import React from 'react';
-import PageHeader from "./Header";
-import PageFooter from "./Footer";
 
 function ProfilePage(props) {
     const palettesData = [
@@ -30,7 +28,6 @@ function ProfilePage(props) {
 
     return (
         <div>
-            <PageHeader />
             <main className="profile">
                 <div className="container">
                     <div className="profile-info">
@@ -58,7 +55,6 @@ function ProfilePage(props) {
                     </section>
                 </div>
             </main>
-            <PageFooter />
         </div>
     );
 }

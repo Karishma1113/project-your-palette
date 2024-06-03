@@ -2,9 +2,16 @@ import React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 
 function PageHeader(props) {
-    const handleSignOut = (event) => {
-        signOut(getAuth());
-    }
+    const currentUser = props.currentUser
+    const handleSignOut = () => {
+        const auth = getAuth();
+        auth.signOut().then(() => {
+          console.log("Successfully signed out");
+        }).catch((error) => {
+          console.error("Sign out error", error);
+        });
+      };
+      
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,8 +40,11 @@ function PageHeader(props) {
                         </ul>
                     </div>
                     <div className='authorization'>
-                        <button type="submit" className="btn btn-primary" ><a href="/signin" className="signin">Sign In</a></button>
-                        <button type="submit" className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
+                        {currentUser ? (
+                            <button type="button" className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
+                        ) : (
+                            <a href="/signin" className="btn btn-primary signin">Sign In</a>
+                        )}
                     </div>
                 </div>
             </nav>

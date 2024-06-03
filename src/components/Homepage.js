@@ -1,10 +1,6 @@
-import PageHeader from "./Header";
-import PageFooter from "./Footer";
-
 function HomePage() {
     return (
         <div>
-            <PageHeader />
             <main className="homepage">
                 <h1>Welcome to Your Pal-ette</h1>
                 <span>Uncover Your True Colors</span>
@@ -32,7 +28,6 @@ function HomePage() {
                     </div>
                 </section>
             </main>
-            <PageFooter />
         </div>
     );
 }

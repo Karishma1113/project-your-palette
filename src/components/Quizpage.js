@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import PageHeader from './Header';
-import PageFooter from './Footer';
 import QuizQuestion from './QuizQuestion';
 import QuizResults from './QuizResults';
 
@@ -115,7 +113,6 @@ function QuizPage() {
 
     return (
         <div>
-            <PageHeader />
             <main className="quiz-page">
                 <div className="quiz-intro">
                     <h1>Discover Your Colors: Take Our Color Analysis Quiz!</h1>
@@ -145,7 +142,6 @@ function QuizPage() {
                     </div>
                 )}
             </main>
-            <PageFooter />
         </div>
     );
 }

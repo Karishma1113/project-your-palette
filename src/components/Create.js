@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import PageHeader from './Header';
-import PageFooter from './Footer';
 import CreateResults from './CreateResults';
 
 
@@ -39,7 +37,6 @@ function Create(props) {
 
     return (
         <div>
-            <PageHeader />
             <main className="page">
                 <div className="create-heading">
                     <h1>Create Your Own Palette</h1>
@@ -92,7 +89,6 @@ function Create(props) {
                     {showPalette && <CreateResults selectedColors={selectedColors} />}
                 </section>
             </main>
-            <PageFooter />
         </div>
     );
 }

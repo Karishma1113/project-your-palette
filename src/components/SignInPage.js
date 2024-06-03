@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import {getAuth, EmailAuthProvider, GoogleAuthProvider} from "firebase/auth";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import PageHeader from "./Header";
-import PageFooter from "./Footer";
 
 function SignInPage(props) {
     const currentUser = props.currentUser;
@@ -29,11 +27,9 @@ function SignInPage(props) {
 
     return (
         <div>
-            <PageHeader />
             <main>
                 <StyledFirebaseAuth firebaseAuth={auth} uiConfig={firebaseUIConfig}/>
             </main>
-            <PageFooter />
         </div>
     );
 };

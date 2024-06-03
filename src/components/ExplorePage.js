@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import PageHeader from "./Header";
-import PageFooter from "./Footer";
 import ExploreLike from "./ExploreLike";
 import ExploreComment from "./ExploreComment";
 import ExploreShare from "./ExploreShare";
@@ -81,7 +79,6 @@ const ExplorePage = () => {
 
     return (
         <body>
-            <PageHeader />
             <main className="explore-background">
                 <div className="explore-title text-center">
                     <h1>Explore Your Friends' Palettes</h1>
@@ -114,7 +111,6 @@ const ExplorePage = () => {
                     </section>
                 </div>
             </main>
-            <PageFooter />
         </body>
     );
 }

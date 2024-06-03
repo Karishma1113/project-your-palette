@@ -3,6 +3,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import React, { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import Header from './Header'
+import Footer from './Footer';
 import HomePage from './Homepage';
 import QuizPage from "./Quizpage";
 import SignInPage from './SignInPage';
@@ -35,14 +37,16 @@ function App(props) {
   }, []);
 
   function ProtectedPage(props) {
-    if(props.currentUser.userName === "") {
-      return Navigate("/SignInPage");
+    if (props.currentUser.userName === "") {
+      return <Navigate to="/signin" />;
     } else {
-        return <Outlet />;
+      return <Outlet />;
     }
   }
 
   return (
+    <div>
+    <Header currentUser={currentUser} />
     <Router>
       <div>
         <Routes>
@@ -58,6 +62,8 @@ function App(props) {
         </Routes>
       </div>
     </Router>
+    <Footer />
+    </div>
   );
 }
 
