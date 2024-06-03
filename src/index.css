@@ -142,7 +142,7 @@ footer > p {
 
 /* Explore Page Styling */
 
-.explore-background {
+.explore-background, .sign-in-page {
     height: 1000px;
 }
 
