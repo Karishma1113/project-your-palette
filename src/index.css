@@ -267,13 +267,6 @@ section.picture > img {
     height: 15vh;
 }
 
-section.info {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    margin-bottom: 40px;
-}
-
 section.info > p {
     height: 6px;
 }
