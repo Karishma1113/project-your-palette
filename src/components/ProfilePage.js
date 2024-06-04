@@ -54,10 +54,7 @@ function ProfilePage(props) {
         const userId = getAuth().currentUser.uid;
         const likeRef = ref(db, `users/${userId}/likedPosts/${postId}`);
         firebaseSet(likeRef, null); 
-        setLikedPalettes((prevLiked) => prevLiked.filter(palette => palette.id !== postId));
-        if (typeof props.onUnlike === 'function') {
-            props.onUnlike(postId);
-        }
+        setLikedPalettes(likedPalettes.filter(palette => palette.id !== postId));
     };
 
     return (
@@ -94,8 +91,7 @@ function ProfilePage(props) {
                                                 <div className="col-sm">
                                                     <h2 className="card-title">{palette.friendName}</h2>
                                                     <p>{palette.caption}</p>
-                                                    <button className="btn btn-info" onClick={() => handleUnlike(palette.id, props.onUnlike)}>Unlike</button>
-
+                                                    <button className="btn btn-info" onClick={() => handleUnlike(palette.id)}>Unlike</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -90,14 +90,6 @@ const ExplorePage = () => {
     });
   };
 
-  const handleUnlikeExplore = (postId) => {
-    setPostData((prevData) =>
-        prevData.map((post) =>
-            post.id === postId ? { ...post, liked: false } : post
-        )
-    );
-};
-
   useEffect(() => {
     const fetchLikedPosts = () => {
       if (currentUser) {
@@ -242,7 +234,6 @@ const ExplorePage = () => {
             </p>
           </div>
         )}
-        <ProfilePage onUnlike={handleUnlikeExplore} />
       </main>
     </body>
   );
