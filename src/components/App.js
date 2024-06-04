@@ -56,6 +56,7 @@ function App(props) {
             <Route path="/create" element={<Create />} />
             <Route path="/create" element={<CreateResults />} />
             <Route path="/explore" element={<ExplorePage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       </div>
