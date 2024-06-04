@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreateResults from './CreateResults';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
@@ -22,7 +22,6 @@ function Create(props) {
         });
     };
 
-
     const handleRevealPalette = () => {
         setShowPalette(true);
     };
@@ -33,20 +32,22 @@ function Create(props) {
     
         if (user) {
             const db = getDatabase();
-            const paletteRef = ref(db, `users/${user.uid}/createdPalettes`);
-            firebaseSet(paletteRef, selectedColors)
-              .then(() => {
-                  console.log('Palette saved successfully');
-                  navigate('/profile'); 
-              })
-              .catch(error => {
-                  console.error('Error saving palette:', error);
-              });
+            const paletteRef = ref(db, `users/${user.uid}/palettes`);
+            firebaseSet(paletteRef, {
+                [new Date().getTime()]: selectedColors
+            })
+            .then(() => {
+                console.log('Palette saved successfully');
+                navigate('/profile'); 
+            })
+            .catch(error => {
+                console.error('Error saving palette:', error);
+            });
         } else {
             console.error('User is not authenticated');
         }
     };
-
+                
     const colorOptions = [
         { season: 'Spring', warmth: 'Light', colors: ['Yellow', 'Orange', 'LightGreen', 'Pink', 'LightBlue', 'SkyBlue', 'Gold', 'Green', 'OrangeRed'] },
         { season: 'Spring', warmth: 'Neutral', colors: ['Yellow', 'Orange', 'LightBlue', 'LightGreen', 'Gold', 'Pink', 'Green', 'SkyBlue', 'OrangeRed'] },
@@ -110,7 +111,7 @@ function Create(props) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center my-3">
-                        <button className="btn btn-outline-secondary mb-3" onClick={handleRevealPalette}>Reveal my Palette</button>
+                        <button className="btn btn-outline-secondary mb-3 me-4 " onClick={handleRevealPalette}>Reveal my Palette</button>
                         <button className="btn btn-outline-secondary mb-3" onClick={savePalette}>Save Palette</button>
                     </div>
                     {showPalette && <CreateResults selectedColors={selectedColors} />}
