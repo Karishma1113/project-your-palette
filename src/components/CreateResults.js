@@ -12,6 +12,7 @@ function CreateResults(props) {
                         <div
                             key={index}
                             className={`color-selected ${color.toLowerCase()}`}
+                            style={{ backgroundColor: color.toLowerCase() }}
                         ></div>
                     ))
                 ) : (
