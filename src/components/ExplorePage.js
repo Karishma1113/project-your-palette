@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ExploreLike from "./ExploreLike";
 import ExploreComment from "./ExploreComment";
 import ExploreShare from "./ExploreShare";
+import ProfilePage from "./ProfilePage";
 import {
   getDatabase,
   ref,
@@ -63,12 +64,12 @@ const ExplorePage = () => {
       return;
     }
     const userId = currentUser.uid;
-  
+
     setPostData((prevData) => {
       return prevData.map((post) => {
         if (post.id === postId) {
           const updatedPost = { ...post, liked: !post.liked };
-  
+
           // updates liked status in Firebase
           const likeRef = ref(db, `users/${userId}/likedPosts/${postId}`);
           if (updatedPost.liked) {
@@ -79,16 +80,47 @@ const ExplorePage = () => {
               caption: post.caption,
             });
           } else {
-            firebaseSet(likeRef, null); 
+            firebaseSet(likeRef, null);
           }
-  
+
           return updatedPost;
         }
         return post;
       });
     });
   };
-  
+
+  const handleUnlikeExplore = (postId) => {
+    setPostData((prevData) =>
+        prevData.map((post) =>
+            post.id === postId ? { ...post, liked: false } : post
+        )
+    );
+};
+
+  useEffect(() => {
+    const fetchLikedPosts = () => {
+      if (currentUser) {
+        const userId = currentUser.uid;
+        const likedPostsRef = ref(db, `users/${userId}/likedPosts`);
+        onValue(likedPostsRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const likedPostsIds = Object.keys(data);
+            setPostData((prevData) =>
+              prevData.map((post) =>
+                likedPostsIds.includes(String(post.id))
+                  ? { ...post, liked: true }
+                  : post
+              )
+            );
+          }
+        });
+      }
+    };
+
+    fetchLikedPosts();
+  }, [db, currentUser]);
 
   const addComment = (postId, text) => {
     if (!currentUser) {
@@ -118,7 +150,7 @@ const ExplorePage = () => {
 
     setPostData(updatedPostData);
   };
- 
+
   // fetching comments from firebase
   useEffect(() => {
     const fetchData = () => {
@@ -204,12 +236,13 @@ const ExplorePage = () => {
           <div className="sign-in-prompt text-center mt-3">
             <p>
               <span>
-                <Link to="/signin">Sign in here</Link> to see and interact
-                with posts
+                <Link to="/signin">Sign in here</Link> to see and interact with
+                posts
               </span>
             </p>
           </div>
         )}
+        <ProfilePage onUnlike={handleUnlikeExplore} />
       </main>
     </body>
   );
