@@ -120,7 +120,7 @@ const ExplorePage = (props) => {
     const userId = currentUser.uid;
     const newComment = {
       userId: userId,
-      user: currentUser.displayName || "You",
+      user: currentUser.displayName,
       text: text,
     };
 
@@ -170,6 +170,46 @@ const ExplorePage = (props) => {
     fetchData();
   }, [db, postData, currentUser]);
 
+  const renderPost = (post) => (
+    <div className="col-12 mb-3" key={post.id}>
+      <div className="palette-card border border-dark border-2">
+        <div className="friend-info pt-2 ps-2 d-flex align-items-center justify-content-start">
+          <img
+            src={post.friendIcon}
+            alt={post.friendName}
+            className="friend-icon"
+          />
+          <p className="friend-name ps-2 pt-3">{post.friendName}</p>
+        </div>
+        <div className="friends-palette">
+          <img src={post.paletteImage} alt="Friend's Color Palette" />
+        </div>
+        <div className="caption pt-2 px-3">
+          <p>{post.caption}</p>
+        </div>
+        <div className="post-interaction pb-3">
+          <ExploreLike liked={post.liked} onClick={() => handleLike(post.id)} />
+          {currentUser && (
+            <ExploreComment
+              postId={post.id}
+              comments={post.comments}
+              addComment={addComment}
+            />
+          )}
+          <ExploreShare />
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderExplorePosts = () => (
+    <section>
+      <div className="row">
+        {postData.map((post) => renderPost(post))}
+      </div>
+    </section>
+  );
+
   return (
     <body>
       <main className="explore-background">
@@ -178,49 +218,7 @@ const ExplorePage = (props) => {
         </div>
         {userSignedIn && (
           <div className="all-palettes">
-            <section>
-              <div className="row">
-                {postData.map((post) => (
-                  <div className="col-12 mb-3" key={post.id}>
-                    <div className="palette-card border border-dark border-2">
-                      <div className="friend-info pt-2 ps-2 d-flex align-items-center justify-content-start">
-                        <img
-                          src={post.friendIcon}
-                          alt={post.friendName}
-                          className="friend-icon"
-                        />
-                        <p className="friend-name ps-2 pt-3">
-                          {post.friendName}
-                        </p>
-                      </div>
-                      <div className="friends-palette">
-                        <img
-                          src={post.paletteImage}
-                          alt="Friend's Color Palette"
-                        />
-                      </div>
-                      <div className="caption pt-2 px-3">
-                        <p>{post.caption}</p>
-                      </div>
-                      <div className="post-interaction pb-3">
-                        <ExploreLike
-                          liked={post.liked}
-                          onClick={() => handleLike(post.id)}
-                        />
-                        {currentUser && (
-                          <ExploreComment
-                            postId={post.id}
-                            comments={post.comments}
-                            addComment={addComment}
-                          />
-                        )}
-                        <ExploreShare />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+            {renderExplorePosts()}
           </div>
         )}
         {!userSignedIn && (
