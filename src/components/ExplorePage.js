@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ExploreLike from "./ExploreLike";
 import ExploreComment from "./ExploreComment";
 import ExploreShare from "./ExploreShare";
-import ProfilePage from "./ProfilePage";
 import {
   getDatabase,
   ref,
@@ -12,7 +11,7 @@ import {
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 
-const ExplorePage = () => {
+const ExplorePage = (props) => {
   const [postData, setPostData] = useState([
     {
       id: 1,

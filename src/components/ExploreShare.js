@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ExploreShare = () => {
+const ExploreShare = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [shareMethod, setShareMethod] = useState('');
     const [shareInfo, setShareInfo] = useState('');

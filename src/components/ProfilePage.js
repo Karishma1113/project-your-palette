@@ -48,15 +48,7 @@ function ProfilePage(props) {
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
-
-    const handleUnlike = (postId) => {
-        const db = getDatabase();
-        const userId = getAuth().currentUser.uid;
-        const likeRef = ref(db, `users/${userId}/likedPosts/${postId}`);
-        firebaseSet(likeRef, null); 
-        setLikedPalettes(likedPalettes.filter(palette => palette.id !== postId));
-    };
-
+    
     return (
         <div>
             <main className="profile">
@@ -91,7 +83,6 @@ function ProfilePage(props) {
                                                 <div className="col-sm">
                                                     <h2 className="card-title">{palette.friendName}</h2>
                                                     <p>{palette.caption}</p>
-                                                    <button className="btn btn-info" onClick={() => handleUnlike(palette.id)}>Unlike</button>
                                                 </div>
                                             </div>
                                         </div>
