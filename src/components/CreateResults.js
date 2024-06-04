@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CreateResults(props) {
-    const { selectedColors } = props;
+function CreateResults({ selectedColors = [] }) {
+    console.log('Selected Colors in CreateResults:', selectedColors);
+
     return (
         <div className="create-results">
             <h2 className="text-center py-3 m-0">Your Color Palette:</h2>
@@ -23,13 +24,8 @@ function CreateResults(props) {
     );
 }
 
-
 CreateResults.propTypes = {
     selectedColors: PropTypes.arrayOf(PropTypes.string)
-};
-
-CreateResults.defaultProps = {
-    selectedColors: []
 };
 
 export default CreateResults;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CreateResults from './CreateResults';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
-import { getDatabase, ref, set } from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
 function Create(props) {
     const [selectedColors, setSelectedColors] = useState([]);
@@ -34,7 +34,7 @@ function Create(props) {
         if (user) {
             const db = getDatabase();
             const paletteRef = ref(db, `users/${user.uid}/createdPalettes`);
-            set(paletteRef, selectedColors)
+            firebaseSet(paletteRef, selectedColors)
               .then(() => {
                   console.log('Palette saved successfully');
                   navigate('/profile'); 
@@ -72,7 +72,6 @@ function Create(props) {
                 </div>
                 <section>
                     <div className="create-container">
-                        {/* Choose Season */}
                         <div className="selections">
                             <div className="row">
                                 <h2>Choose Season:</h2>
@@ -84,7 +83,6 @@ function Create(props) {
                                 </div>
                             </div>
                         </div>
-                        {/* Choose Warmth */}
                         <div className="selections">
                             <div className="row">
                                 <h2>Choose Warmth:</h2>

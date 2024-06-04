@@ -27,9 +27,7 @@ function App(props) {
                 userEmail: firebaseUser.email,
             };
             setCurrentUser(user);
-            console.log("Hello, ", firebaseUser.displayName);
         } else {
-            console.log("Sign out");
             setCurrentUser("");
         }
     });

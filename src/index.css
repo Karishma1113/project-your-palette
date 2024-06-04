@@ -342,6 +342,7 @@ section.info > p {
     height: 50px;
     margin: 0 1rem 1rem 1rem;
     display: inline-block;
+    border-radius: 5px;
 }
 
 .color-option.yellow {
