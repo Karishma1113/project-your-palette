@@ -4,7 +4,7 @@ import QuizResults from './QuizResults';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
-function QuizPage() {
+function QuizPage(props) {
     const questions = [
         {
             question: 'What is your skin tone? (Fitzpatrick Scale)',
