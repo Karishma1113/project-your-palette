@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CreateResults({ selectedColors = [] }) {
+function CreateResults(props) {
+    const { selectedColors = [] } = props;
     console.log('Selected Colors in CreateResults:', selectedColors);
 
     return (
