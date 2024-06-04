@@ -60,10 +60,6 @@ function ProfilePage(props) {
                         <section className="picture">
                             <img src="img/husky.png" alt="Profile of a husky" />
                         </section>
-                        <section className="info">
-                            <p>Viewer: 999</p>
-                            <p>Friends: 4</p>
-                        </section>
                         <section>
                             <h2 className="h2">Your Personalized Season:</h2>
                             {season ? (<p className="quiz-season-reveal">{capitalizeFirstLetter(season)}</p>) : (<p>Take our quiz to find your season!</p>)}

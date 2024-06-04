@@ -29,6 +29,27 @@ div.authorization > button {
     border-bottom: solid 1.25px blue;
 }
 
+.container-fluid#sign-in {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    padding-right: 20px;
+}
+
+.sign-in-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
 footer > p {
     font-size: 0.75rem;
     margin: 0;
@@ -244,13 +265,6 @@ section.picture > img {
     place-items: center;
     margin: 20px auto;
     height: 15vh;
-}
-
-section.info {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    margin-bottom: 40px;
 }
 
 section.info > p {
