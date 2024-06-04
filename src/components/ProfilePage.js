@@ -115,8 +115,7 @@ function ProfilePage(props) {
                                                 {palette.map((color, i) => (
                                                     <div
                                                         key={i}
-                                                        className="color-selected"
-                                                        style={{ backgroundColor: color, height: '20px', width: '20px', display: 'inline-block' }}
+                                                        className={`color-selected ${color}`}
                                                     ></div>
                                                 ))}
                                             </div>
