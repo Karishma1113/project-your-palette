@@ -22,7 +22,8 @@ import PropTypes from 'prop-types';
 //     );
 // }
 
-function CreateResults({ selectedColors }) {
+function CreateResults(props) {
+    const { selectedColors } = props;
     return (
         <div className="create-results">
             <h2 className="text-center py-3 m-0">Your Color Palette:</h2>
