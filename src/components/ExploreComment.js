@@ -25,6 +25,10 @@ function ExploreComment(props) {
         }
     };
 
+    const commentElements = comments.map(comment => (
+        <p key={comment.id}>{comment.user}: {comment.text}</p>
+    ));
+
     return (
         <>
             <button className="comment-btn btn btn-outline-secondary" onClick={handleCommentClick}>Comment</button>
@@ -37,9 +41,7 @@ function ExploreComment(props) {
                                 <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                {comments.length > 0 ? comments.map(comment => (
-                                    <p key={comment.id}>{comment.user}: {comment.text}</p>
-                                )) : <p>No comments yet.</p>}
+                                {comments.length > 0 ? commentElements : <p>No comments yet.</p>}
                                 <form onSubmit={handleCommentSubmit} className="d-flex">
                                     <input 
                                         type="text" 
