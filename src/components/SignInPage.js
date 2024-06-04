@@ -27,7 +27,7 @@ function SignInPage(props) {
 
     return (
         <div className="container-fluid" id='sign-in'>
-            <main class="sign-in-page">
+            <main className="sign-in-page">
                 <p className="welcome-message">Welcome to Your Pal-ette, please sign in:</p>
                 <StyledFirebaseAuth firebaseAuth={auth} uiConfig={firebaseUIConfig}/>
             </main>
