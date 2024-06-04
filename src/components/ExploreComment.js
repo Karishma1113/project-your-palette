@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const ExploreComment = ({ postId, comments, addComment }) => {
+function ExploreComment(props) {
+    const { postId, comments, addComment} = props; 
     const [showModal, setShowModal] = useState(false);
     const [newComment, setNewComment] = useState("");
 
