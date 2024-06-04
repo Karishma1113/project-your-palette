@@ -10,7 +10,7 @@ function PageHeader(props) {
         }).catch((error) => {
           console.error("Sign out error", error);
         });
-      };
+    };
       
     return (
         <header>
@@ -38,13 +38,13 @@ function PageHeader(props) {
                                 <a className="nav-link active" href="/profile">Profile</a>
                             </li>
                         </ul>
-                    </div>
-                    <div className='authorization'>
-                        {currentUser ? (
-                            <button type="button" className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
-                        ) : (
-                            <a href="/signin" className="btn btn-primary signin">Sign In</a>
-                        )}
+                        <div className='authorization'>
+                            {currentUser ? (
+                                <button type="button" className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
+                            ) : (
+                                <a href="/signin" className="btn btn-primary signin">Sign In</a>
+                            )}
+                        </div>
                     </div>
                 </div>
             </nav>
