@@ -19,6 +19,7 @@ const ExploreShare = (props) => {
 
     const handleShareMethodChange = (e) => {
         setShareMethod(e.target.value);
+        setShareInfo(''); 
     };
 
     const handleShareInfoChange = (e) => {
@@ -26,8 +27,20 @@ const ExploreShare = (props) => {
     };
 
     const handleShareSubmit = () => {
-        if (shareMethod && shareInfo) {
-            setSharedSuccess(true);
+        if (shareMethod === 'textMessage') {
+            const phoneNumberPattern = /^\d{10}$/; 
+            if (phoneNumberPattern.test(shareInfo)) {
+                setSharedSuccess(true);
+            } else {
+                alert('Please enter a valid phone number.');
+            }
+        } else if (shareMethod === 'email') {
+            const emailPattern = /\S+@\S+\.\S+/;
+            if (emailPattern.test(shareInfo)) {
+                setSharedSuccess(true);
+            } else {
+                alert('Please enter a valid email address.');
+            }
         }
     };
 
@@ -56,7 +69,7 @@ const ExploreShare = (props) => {
                                         {shareMethod && (
                                             <div className="mb-3">
                                                 <label htmlFor="shareInfo" className="form-label">Enter Information:</label>
-                                                <input type="text" id="shareInfo" className="form-control" value={shareInfo} onChange={handleShareInfoChange} placeholder="Enter details..." />
+                                                <input type="text" id="shareInfo" className="form-control" value={shareInfo} onChange={handleShareInfoChange} placeholder={shareMethod === 'textMessage' ? "Enter phone number..." : "Enter email address..."} />
                                             </div>
                                         )}
                                     </>
